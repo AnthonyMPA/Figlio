@@ -245,9 +245,12 @@ nav ul li a:focus {
     }
     
     nav {
-        padding: 0.4em 1.2em;
+        padding: 0.4em 2em;
         border-radius: 20px;
         position: relative;
+        width: 100%;
+        justify-content: space-between;
+        gap: 2rem;
     }
     
     .hamburger {
@@ -313,8 +316,11 @@ nav ul li a:focus {
     }
     
     nav {
-        padding: 0.3em 1em;
+        padding: 0.3em 1.5em;
         border-radius: 15px;
+        width: 100%;
+        justify-content: space-between;
+        gap: 1.8rem;
     }
     
     nav ul {
@@ -338,8 +344,11 @@ nav ul li a:focus {
     }
     
     nav {
-        padding: 0.25em 0.8em;
+        padding: 0.25em 1.2em;
         border-radius: 12px;
+        width: 100%;
+        justify-content: space-between;
+        gap: 1.5rem;
     }
     
     nav ul {
