@@ -40,7 +40,7 @@ nav {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 25px;
-    padding: 0.5em 2.5em;
+    padding: 0.5em 1.5em;
     font-family: 'Poppins', Verdana, Geneva, sans-serif;
     box-shadow: 0 8px 32px rgba(169, 99, 59, 0.15), 0 4px 16px rgba(169, 99, 59, 0.1);
     transition: all 0.3s ease;
@@ -48,9 +48,10 @@ nav {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    gap: 2rem;
-    width: 100%;
-    justify-content: space-between;
+    gap: 1.5rem;
+    width: auto;
+    justify-content: center;
+    max-width: 900px;
 }
 
 nav:hover {
