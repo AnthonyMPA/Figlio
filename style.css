@@ -229,22 +229,16 @@ nav ul li a:focus {
     max-width: 100%;
     margin: 0;
     padding: 0;
+    margin-top: 2rem;
 }
 
 .banner-image {
-    width: 100%;
+    margin-left: 10%;
+    width: 80%;
     height: auto;
     max-height: 400px;
     object-fit: cover;
-    border-radius: 0;
-    box-shadow: 0 8px 32px rgba(169, 99, 59, 0.15), 0 4px 16px rgba(169, 99, 59, 0.1);
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.banner-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 40px rgba(169, 99, 59, 0.25), 0 6px 20px rgba(169, 99, 59, 0.15);
+    border-radius: 50px;
 }
 
 /* Responsive banner */
@@ -272,3 +266,19 @@ nav ul li a:focus {
     }
 }
 
+@font-face {
+    font-family: 'Chatara Regular';
+    src: url('fonts/Chatara.otf') format('opentype'),
+         url('fonts/Chatara.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+#h1-main {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: #2c3e50;
+}
+  
