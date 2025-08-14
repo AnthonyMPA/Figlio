@@ -14,12 +14,17 @@
                     <img src="images/figlio_logo_nav.png" alt="Figlio Logo" class="logo">
                 </a>
             </div>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="cadeaubon.html">Cadeaubon</a></li>
                 <li><a href="over_ons.html">Over ons</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu openen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
     <main>
@@ -47,5 +52,31 @@
             <div class="footer-address"><strong>ADRES</strong><br><br> Landwaartslaan 11<br> 3600 Genk</div>
         </div>
     </footer>
+    <script>
+        // Hamburger menu functionaliteit
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Sluit menu wanneer op een link wordt geklikt
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Sluit menu wanneer buiten het menu wordt geklikt
+        document.addEventListener('click', function(event) {
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
