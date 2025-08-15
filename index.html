@@ -43,6 +43,36 @@
                 
                 Kom langs of bestel je favoriet om mee te nemen. Buon appetito!</p>
         </div>
+        
+        <h2 class="preview-title">Een Voorproefje van Onze Gerechten</h2>
+        <p class="preview-text">Ontdek onze authentieke Italiaanse smaken, bereid met passie en de fijnste ingrediënten. Van handgemaakte pasta's tot perfect gebakken pizza's - elke hap is een reis naar Italië.</p>
+        
+        <div class="slideshows-container">
+            <div class="pasta-slideshow left-slideshow">
+                <img src="images/pasta_1.jpg" alt="Pasta gerecht 1" class="pasta-image active">
+                <img src="images/pasta_2.JPG" alt="Pasta gerecht 2" class="pasta-image">
+                <img src="images/pasta_3.JPG" alt="Pasta gerecht 3" class="pasta-image">
+                <img src="images/pasta_4.JPG" alt="Pasta gerecht 4" class="pasta-image">
+                <img src="images/pasta_5.JPG" alt="Pasta gerecht 5" class="pasta-image">
+                <img src="images/pasta_6.jpg" alt="Pasta gerecht 6" class="pasta-image">
+                <img src="images/pasta_7.JPG" alt="Pasta gerecht 7" class="pasta-image">
+                <img src="images/pasta_8.JPG" alt="Pasta gerecht 8" class="pasta-image">
+                <img src="images/pasta_9.JPG" alt="Pasta gerecht 9" class="pasta-image">
+                <img src="images/pasta_10.JPG" alt="Pasta gerecht 10" class="pasta-image">
+            </div>
+            <div class="pasta-slideshow right-slideshow">
+                <img src="images/pizza_1.JPG" alt="Pizza 1" class="pasta-image active">
+                <img src="images/pizza_2.JPG" alt="Pizza 2" class="pasta-image">
+                <img src="images/pizza_3.JPG" alt="Pizza 3" class="pasta-image">
+                <img src="images/pizza_4.JPG" alt="Pizza 4" class="pasta-image">
+                <img src="images/pizza_5.JPG" alt="Pizza 5" class="pasta-image">
+                <img src="images/pizza_6.JPG" alt="Pizza 6" class="pasta-image">
+                <img src="images/pizza_7.JPG" alt="Pizza 7" class="pasta-image">
+                <img src="images/pizza_8.JPG" alt="Pizza 8" class="pasta-image">
+                <img src="images/pizza_9.JPG" alt="Pizza 9" class="pasta-image">
+                <img src="images/pizza_10.JPG" alt="Pizza 10" class="pasta-image">
+            </div>
+        </div>
      </div>
     </main>
     <footer class="site-footer">
@@ -77,6 +107,42 @@
                 navMenu.classList.remove('active');
             }
         });
+
+        // Pasta slideshow functionaliteit
+        function startSlideshows() {
+            // Linkerkant slideshow
+            const leftSlideshow = document.querySelector('.left-slideshow');
+            const leftImages = leftSlideshow.querySelectorAll('.pasta-image');
+            let leftCurrentIndex = 0;
+
+            // Rechterkant slideshow
+            const rightSlideshow = document.querySelector('.right-slideshow');
+            const rightImages = rightSlideshow.querySelectorAll('.pasta-image');
+            let rightCurrentIndex = 0;
+
+            // Functie voor linkerkant slideshow
+            function rotateLeftImages() {
+                leftImages[leftCurrentIndex].classList.remove('active');
+                leftCurrentIndex = (leftCurrentIndex + 1) % leftImages.length;
+                leftImages[leftCurrentIndex].classList.add('active');
+            }
+
+            // Functie voor rechterkant slideshow
+            function rotateRightImages() {
+                rightImages[rightCurrentIndex].classList.remove('active');
+                rightCurrentIndex = (rightCurrentIndex + 1) % rightImages.length;
+                rightImages[rightCurrentIndex].classList.add('active');
+            }
+
+            // Start de slideshows met verschillende intervallen
+            setInterval(rotateLeftImages, 3000); // Elke 3 seconden
+            setTimeout(() => {
+                setInterval(rotateRightImages, 3000); // Elke 3 seconden, maar start 1.5 seconden later
+            }, 1500);
+        }
+
+        // Start de slideshows wanneer de pagina geladen is
+        window.addEventListener('load', startSlideshows);
     </script>
 </body>
 </html>
