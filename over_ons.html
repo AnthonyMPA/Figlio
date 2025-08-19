@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figlio - Pasta & Pizza</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="images/figlio_logo_tabbar.jpg">
 </head>
 <body>
     <header>
@@ -29,16 +30,80 @@
     </header>
     <main>
      <div class="main-container">
+        <h1 class="over-ons-title">Over Ons</h1>
+        <div class="glass-history-frame">
+            <div class="glass-content">
+                <h2>Onze Geschiedenis</h2>
+                <p>La Pizza was een geliefde Italiaanse eetgelegenheid die jarenlang een begrip was in Genk. Opgericht in de jaren '80 door de familie Rossi, stond het restaurant bekend om zijn authentieke Napolitaanse pizza's, bereid volgens traditionele recepten die van generatie op generatie werden doorgegeven.</p>
+                <p>De warme sfeer, het vakmanschap en de passie voor eerlijke Italiaanse gerechten maakten La Pizza tot een favoriet onder lokale bewoners en bezoekers van ver buiten de stad. De houtoven, speciaal geïmporteerd uit Italië, gaf de pizza's die kenmerkende smaak die nergens anders te vinden was.</p>
+                <p>In 2020 besloot de familie Rossi het stokje door te geven aan een nieuwe generatie enthousiaste restaurateurs, en zo werd Figlio geboren. Met respect voor de rijke geschiedenis en traditie van La Pizza, maar met een eigen moderne visie, zetten wij het culinaire erfgoed voort.</p>
+                <p>Bij Figlio eren we de nalatenschap van La Pizza door dezelfde toewijding aan kwaliteit en authenticiteit, terwijl we nieuwe smaken en concepten introduceren die passen bij de hedendaagse eetcultuur.</p>
+            </div>
         </div>
+     </div>
     </main>
     <footer class="site-footer">
         <div class="footer-inner">
-            <div class="footer-brand">Figlio — Pizza & Pasta</div>
-            <div class="footer-contact">E-mail: <a href="mailto:info@figlio.be">info@figlio.be</a></div>
-            <div class="footer-address">Adres: Landwaartslaan 11, 3600 Genk</div>
+            <div class="footer-address">
+                <h3>ADRES</h3>
+                <p>Landwaartslaan 11<br>3600 Genk</p>
+                <div class="footer-contact">
+                    <p>E-mail: <a href="mailto:info@figlio.be">info@figlio.be</a></p>
+                    <p>Tel: <a href="tel:089412345">089 41 23 45</a></p>
+                </div>
+            </div>
+            <div class="footer-openingstijden" id="footer-openingstijden">
+                <h3 id="openingstijden-titel">OPENINGSTIJDEN</h3>
+                <div class="openingstijden-container" id="openingstijden-container">
+                    <p>Maandag: Gesloten</p>
+                    <p>Dinsdag: Gesloten</p>
+                    <p>Woensdag - Zondag: 17:00 - 22:00</p>
+                    <p>Keuken sluit om 21:00</p>
+                </div>
+            </div>
+            <div class="footer-brand">
+                <img src="images/figlio_logo_footer.png" alt="Figlio Logo" class="footer-logo">
+                <div class="footer-social">
+                    <div class="social-item">
+                        <a href="https://www.instagram.com/figlio.genk/" target="_blank" aria-label="Volg ons op Instagram">
+                            <img src="images/instagram-icon.svg" alt="Instagram" class="instagram-icon">
+                        </a>
+                        <a href="https://www.instagram.com/figlio.genk/" target="_blank">@figlio.genk</a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://www.facebook.com/figlio.genk/" target="_blank" aria-label="Volg ons op Facebook">
+                            <img src="images/facebook-icon.svg" alt="Facebook" class="instagram-icon">
+                        </a>
+                        <span>Figlio Genk</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <script>
+        // Responsieve footer functionaliteit
+        function adjustFooter() {
+            if (window.innerWidth <= 640) {
+                document.getElementById('openingstijden-titel').style.textAlign = 'center';
+                document.getElementById('openingstijden-container').style.textAlign = 'center';
+                var openingsUren = document.querySelectorAll('#openingstijden-container p');
+                for (var i = 0; i < openingsUren.length; i++) {
+                    openingsUren[i].style.textAlign = 'center';
+                }
+            } else {
+                document.getElementById('openingstijden-titel').style.textAlign = 'left';
+                document.getElementById('openingstijden-container').style.textAlign = 'left';
+                var openingsUren = document.querySelectorAll('#openingstijden-container p');
+                for (var i = 0; i < openingsUren.length; i++) {
+                    openingsUren[i].style.textAlign = 'left';
+                }
+            }
+        }
+        
+        // Voer uit bij laden en bij resize
+        window.addEventListener('load', adjustFooter);
+        window.addEventListener('resize', adjustFooter);
+        
         // Hamburger menu functionaliteit
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');

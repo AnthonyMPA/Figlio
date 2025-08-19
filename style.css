@@ -172,8 +172,8 @@ nav ul li a:focus {
     margin: 0 auto;
     padding: 2rem 2rem;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
     border: none;
     overflow: hidden;
 }
@@ -204,18 +204,102 @@ nav ul li a:focus {
     font-family: 'Poppins', Verdana, Geneva, sans-serif;
 }
 
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    border-bottom: none;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.2);
+}
+
+.footer-phone {
+    margin-top: 10px;
+}
+
+.footer-phone a {
+    font-weight: 600;
+}
+
 .site-footer .divider {
     display: none;
 }
 
-@media (min-width: 640px) {
-    .site-footer .footer-inner {
-        grid-template-columns: 1.2fr 1fr 1fr;
-        align-items: center;
-    }
-    .footer-brand {
-        margin-bottom: 0.25rem;
-    }
+.footer-brand {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-brand .footer-social {
+    justify-content: flex-end;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    width: auto;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.footer-address {
+    text-align: left;
+}
+
+.footer-address p {
+    margin-bottom: 15px;
+}
+
+.footer-contact p {
+    margin-bottom: 12px;
+}
+
+.footer-openingstijden {
+    text-align: left;
+}
+
+.footer-openingstijden h3, .footer-address h3 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.openingstijden-container {
+    text-align: left;
+    display: inline-block;
+}
+
+.footer-openingstijden p {
+    margin: 0;
+    line-height: 1.6;
+    text-align: left;
 }
 
 /* Responsive header/nav */
@@ -806,24 +890,299 @@ nav ul li a:focus {
 @media (max-width: 768px) {
     .site-footer .footer-inner {
         padding: 1.5rem 1.5rem;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .footer-address p,
+    .footer-openingstijden p {
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-footer .footer-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .footer-brand, 
+    .footer-address, 
+    .footer-openingstijden {
+        text-align: center !important;
+        width: 100%;
+    }
+    
+    .footer-address {
+        order: 1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-address p, 
+    .footer-address h3 {
+        text-align: center !important;
+    }
+    
+    .footer-openingstijden {
+        order: 2;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-openingstijden h3 {
+        text-align: center !important;
+    }
+    
+    .footer-brand {
+        order: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-brand .footer-social {
+        align-items: center;
+    }
+    
+    .social-item {
+        justify-content: center;
+    }
+    
+    .openingstijden-container {
+        margin: 0 auto;
+        display: inline-block;
+        text-align: center !important;
+    }
+    
+    .footer-openingstijden p {
+        text-align: center !important;
+    }
+    
+    .footer-contact {
+        margin: 1rem 0;
+        text-align: center !important;
     }
 }
 
 @media (max-width: 480px) {
-    .site-footer .footer-inner {
-        padding: 1rem 1rem;
-        gap: 0.8rem;
+    .site-footer {
         text-align: center;
+    }
+    
+    .site-footer .footer-inner {
+        padding: 1.5rem 1rem;
+        gap: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .footer-brand {
         font-size: 0.9rem;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     
     .footer-contact,
+    .footer-address,
+    .footer-openingstijden {
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-address h3, 
+    .footer-openingstijden h3 {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+        text-align: center !important;
+        width: 100%;
+    }
+    
+    .footer-address p {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footer-logo {
+        max-width: 130px;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-social {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .social-item {
+        margin-bottom: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .footer-contact p {
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    
     .footer-address {
-        font-size: 0.85rem;
+        margin-bottom: 0;
+    }
+    
+    .footer-openingstijden {
+        margin-bottom: 0;
+        width: 100%;
+    }
+    
+    .openingstijden-container {
+        text-align: center !important;
+        width: 100%;
+    }
+    
+    .footer-openingstijden p {
+        text-align: center !important;
+        width: 100%;
+    }
+}
+  
+/* Over Ons page styling */
+.over-ons-title {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 4.5rem;
+    text-align: center;
+    margin: 2.5rem 0 2rem;
+    color: #656434;
+    letter-spacing: 0.1em;
+}
+
+.glass-history-frame {
+    width: 80%;
+    margin: 2rem auto 4rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.glass-content {
+    padding: 3rem;
+    color: #656434;
+}
+
+.glass-content h2 {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.glass-content p {
+    font-family: "Bodoni 72", "Bodoni MT", Bodoni, Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.glass-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive styling for Over Ons page */
+@media (max-width: 768px) {
+    .over-ons-title {
+        font-size: 3.5rem;
+        margin: 2rem 0 1.5rem;
+    }
+    
+    .glass-history-frame {
+        width: 90%;
+        margin: 1.5rem auto 3rem;
+        border-radius: 25px;
+    }
+    
+    .glass-content {
+        padding: 2.5rem;
+    }
+    
+    .glass-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .glass-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 600px) {
+    .over-ons-title {
+        font-size: 3rem;
+        margin: 1.5rem 0 1.2rem;
+    }
+    
+    .glass-history-frame {
+        width: 95%;
+        margin: 1.2rem auto 2.5rem;
+        border-radius: 20px;
+    }
+    
+    .glass-content {
+        padding: 2rem;
+    }
+    
+    .glass-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .glass-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .over-ons-title {
+        font-size: 2.5rem;
+        margin: 1.2rem 0 1rem;
+    }
+    
+    .glass-history-frame {
+        width: 95%;
+        margin: 1rem auto 2rem;
+        border-radius: 15px;
+    }
+    
+    .glass-content {
+        padding: 1.5rem;
+    }
+    
+    .glass-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .glass-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 }
   
