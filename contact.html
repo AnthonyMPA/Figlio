@@ -29,7 +29,114 @@
         </nav>
     </header>
     <main>
-     <div class="main-container">
+        <div class="main-container">
+            <h1 class="contact-title">Contact</h1>
+            
+            <!-- Kaart en Openingstijden sectie -->
+            <div class="contact-section">
+                <div class="map-openingstijden-grid">
+                    <!-- Kaart -->
+                    <div class="glass-map-container">
+                        <h2>Onze Locatie</h2>
+                        <div class="location-info">
+                            <div class="address-info">
+                                <div class="address-icon">📍</div>
+                                <div class="address-details">
+                                    <h3><a href="https://www.google.com/maps/place/Landwaartslaan+11,+3600+Genk" target="_blank" class="address-link">Landwaartslaan 11, 3600 Genk</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-actions">
+                            <a href="https://www.google.com/maps/dir//Landwaartslaan+11,+3600+Genk" target="_blank" class="route-button">
+                                <span class="route-icon">🚗</span>
+                                <span class="route-text">Routebeschrijving</span>
+                                <span class="route-arrow">→</span>
+                            </a>
+                        </div>
+                        <div class="map-wrapper">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2498.1234567890123!2d5.500000000000001!3d50.96666666666667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0e9c123456789%3A0xabcdef123456789!2sLandwaartslaan%2011%2C%203600%20Genk!5e0!3m2!1snl!2sbe!4v1234567890123!5m2!1snl!2sbe" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0; border-bottom:0; border-radius: 20px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Openingstijden -->
+                    <div class="glass-openingstijden-container">
+                        <h2>Openingstijden</h2>
+                        <div class="status-indicator" id="status-indicator">
+                            <span class="status-dot" id="status-dot"></span>
+                            <span class="status-text" id="status-text">Berekenen...</span>
+                        </div>
+                        <div class="openingstijden-list">
+                            <div class="dag-rij">
+                                <span class="dag">Maandag</span>
+                                <span class="tijd gesloten">Gesloten</span>
+                            </div>
+                            <div class="dag-rij">
+                                <span class="dag">Dinsdag</span>
+                                <span class="tijd gesloten">Gesloten</span>
+                            </div>
+                            <div class="dag-rij">
+                                <span class="dag">Woensdag</span>
+                                <span class="tijd">17:00 - 22:00</span>
+                            </div>
+                            <div class="dag-rij">
+                                <span class="dag">Donderdag</span>
+                                <span class="tijd">17:00 - 22:00</span>
+                            </div>
+                            <div class="dag-rij">
+                                <span class="dag">Vrijdag</span>
+                                <span class="tijd">17:00 - 22:00</span>
+                            </div>
+                            <div class="dag-rij">
+                                <span class="dag">Zaterdag</span>
+                                <span class="tijd">17:00 - 22:00</span>
+                            </div>
+                            <div class="dag-rij">
+                                <span class="dag">Zondag</span>
+                                <span class="tijd">17:00 - 22:00</span>
+                            </div>
+                        </div>
+                        <p class="keuken-info" id="keuken-info">Keuken sluit om 21:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contactgegevens sectie -->
+            <div class="contact-section">
+                <div class="glass-contact-container">
+                    <h2 class="contact-title-main">Contactgegevens</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item-main">
+                            <div class="contact-icon-main">📍</div>
+                            <div class="contact-details-main">
+                                <h3>Adres</h3>
+                                <p><a href="https://www.google.com/maps/dir//Landwaartslaan+11,+3600+Genk,+België" target="_blank">Landwaartslaan 11<br>3600 Genk</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item-main">
+                            <div class="contact-icon-main">📞</div>
+                            <div class="contact-details-main">
+                                <h3>Telefoon</h3>
+                                <p><a href="tel:089412345">089 41 23 45</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item-main">
+                            <div class="contact-icon-main">📧</div>
+                            <div class="contact-details-main">
+                                <h3>E-mail</h3>
+                                <p><a href="mailto:info@figlio.be">info@figlio.be</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="site-footer">
@@ -71,6 +178,74 @@
         </div>
     </footer>
     <script>
+        // Openingstijden status berekenen
+        function checkOpeningStatus() {
+            const now = new Date();
+            const currentDay = now.getDay(); // 0 = zondag, 1 = maandag, etc.
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            const currentTime = currentHour * 60 + currentMinute;
+            
+            let isOpen = false;
+            let statusText = '';
+            let keukenStatus = '';
+            let keukenClass = '';
+            
+            // Maandag (1) en Dinsdag (2) zijn gesloten
+            if (currentDay === 1 || currentDay === 2) {
+                isOpen = false;
+                statusText = 'VANDAAG GESLOTEN';
+                keukenStatus = 'Keuken is gesloten';
+                keukenClass = 'keuken-gesloten';
+            } else {
+                // Woensdag t/m Zondag: 17:00 - 22:00
+                const openTime = 17 * 60; // 17:00
+                const closeTime = 22 * 60; // 22:00
+                const keukenCloseTime = 21 * 60; // 21:00
+                
+                if (currentTime >= openTime && currentTime < closeTime) {
+                    isOpen = true;
+                    statusText = 'NU OPEN';
+                    
+                    if (currentTime >= keukenCloseTime) {
+                        keukenStatus = 'Keuken is nu gesloten';
+                        keukenClass = 'keuken-gesloten-pulse';
+                    } else {
+                        keukenStatus = 'Keuken sluit om 21:00';
+                        keukenClass = 'keuken-open';
+                    }
+                } else if (currentTime < openTime) {
+                    isOpen = false;
+                    statusText = 'VANDAAG OPEN VANAF 17:00';
+                    keukenStatus = 'Keuken sluit om 21:00';
+                    keukenClass = 'keuken-open';
+                } else {
+                    isOpen = false;
+                    statusText = 'VANDAAG GESLOTEN';
+                    keukenStatus = 'Keuken is gesloten';
+                    keukenClass = 'keuken-gesloten';
+                }
+            }
+            
+            // Update status indicator
+            const statusDot = document.getElementById('status-dot');
+            const statusTextElement = document.getElementById('status-text');
+            const statusIndicator = document.getElementById('status-indicator');
+            const keukenInfoElement = document.getElementById('keuken-info');
+            
+            if (statusDot && statusTextElement && statusIndicator) {
+                statusDot.className = `status-dot ${isOpen ? 'open' : 'closed'}`;
+                statusTextElement.textContent = statusText;
+                statusTextElement.className = `status-text ${isOpen ? 'open' : 'closed'}`;
+                statusIndicator.className = `status-indicator ${isOpen ? 'open' : 'closed'}`;
+            }
+            
+            if (keukenInfoElement) {
+                keukenInfoElement.textContent = keukenStatus;
+                keukenInfoElement.className = `keuken-info ${keukenClass}`;
+            }
+        }
+        
         // Responsieve footer functionaliteit
         function adjustFooter() {
             if (window.innerWidth <= 640) {
@@ -91,7 +266,10 @@
         }
         
         // Voer uit bij laden en bij resize
-        window.addEventListener('load', adjustFooter);
+        window.addEventListener('load', function() {
+            adjustFooter();
+            checkOpeningStatus();
+        });
         window.addEventListener('resize', adjustFooter);
         
         // Hamburger menu functionaliteit

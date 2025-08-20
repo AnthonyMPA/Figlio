@@ -1187,4 +1187,1066 @@ nav ul li a:focus {
     }
 }
   
+/* Contact pagina styling */
+.contact-title {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 4.5rem;
+    text-align: center;
+    margin: 2.5rem 0 2rem;
+    color: #656434;
+    letter-spacing: 0.1em;
+}
+
+.contact-section {
+    margin: 2rem auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+/* Kaart en Openingstijden grid layout */
+.map-openingstijden-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.glass-map-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
+}
+
+.glass-map-container h2 {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #656434;
+    letter-spacing: 0.05em;
+}
+
+.glass-openingstijden-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
+    padding: 2.5rem;
+}
+
+.glass-openingstijden-container h2 {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #656434;
+    letter-spacing: 0.05em;
+}
+
+.location-info {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.address-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.address-icon {
+    font-size: 2rem;
+    color: #A9633B;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.address-details {
+    text-align: center;
+}
+
+.address-details h3 {
+    color: #A9633B;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.address-details p {
+    color: #656434;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+}
+
+.address-link {
+    color: #A9633B;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.address-link:hover {
+    color: #A9633B;
+}
+
+/* Routebeschrijving knop - Nieuw design */
+.map-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.route-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #A9633B;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 40px;
+    transition: all 0.4s ease;
+    letter-spacing: 0.4px;
+    box-shadow: 0 4px 15px rgba(169, 99, 59, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.route-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.route-button:hover::before {
+    left: 100%;
+}
+
+.route-button:hover {
+    background: #8B4513;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(169, 99, 59, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.route-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(169, 99, 59, 0.4);
+}
+
+.route-icon {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.route-text {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+.route-arrow {
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.route-button:hover .route-arrow {
+    transform: translateX(5px);
+}
+
+.map-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(169, 99, 59, 0.2);
+    margin-bottom: 1.5rem;
+    border: none;
+    border-bottom: none;
+}
+
+.map-wrapper iframe {
+    filter: brightness(0.7) saturate(0.8) contrast(1.1);
+    transition: filter 0.3s ease;
+    border: none !important;
+    border-bottom: none !important;
+    outline: none;
+    display: block;
+}
+
+.map-wrapper:hover iframe {
+    filter: brightness(0.8) saturate(0.9) contrast(1.05);
+}
+
+/* Openingstijden container */
+.glass-openingstijden-container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
+    padding: 2.5rem;
+}
+
+.glass-openingstijden-container h2 {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #656434;
+    letter-spacing: 0.05em;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.status-indicator.open {
+    border: 2px solid #4CAF50;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(76, 175, 80, 0.3),
+        0 0 25px rgba(76, 175, 80, 0.15);
+}
+
+.status-indicator.closed {
+    border: 2px solid #A9633B;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(169, 99, 59, 0.3),
+        0 0 25px rgba(169, 99, 59, 0.15);
+}
+
+.status-indicator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.status-indicator:hover::before {
+    left: 100%;
+}
+
+.status-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+}
+
+.status-dot.open {
+    background: conic-gradient(from 0deg, #4CAF50, #66BB6A, #81C784, #4CAF50);
+    box-shadow: 
+        0 0 25px rgba(76, 175, 80, 0.7),
+        inset 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: rotate 3s linear infinite, openBounce 2s ease-in-out infinite;
+}
+
+.status-dot.closed {
+    background: conic-gradient(from 0deg, #A9633B, #8B4513, #CD853F, #A9633B);
+    box-shadow: 
+        0 0 25px rgba(169, 99, 59, 0.7),
+        inset 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: rotate 3s linear infinite;
+}
+
+.status-dot.open::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    animation: innerGlow 1.5s ease-in-out infinite;
+}
+
+.status-dot.closed::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    animation: innerGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0% { 
+        transform: rotate(0deg);
+    }
+    100% { 
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes openBounce {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 
+            0 0 25px rgba(76, 175, 80, 0.7),
+            inset 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+    50% { 
+        transform: scale(1.2);
+        box-shadow: 
+            0 0 35px rgba(76, 175, 80, 0.9),
+            inset 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes closedBounce {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 
+            0 0 25px rgba(244, 67, 54, 0.7),
+            inset 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+    50% { 
+        transform: scale(1.2);
+        box-shadow: 
+            0 0 35px rgba(244, 67, 54, 0.9),
+            inset 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes innerGlow {
+    0%, 100% { 
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% { 
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+}
+
+.status-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #656434;
+}
+
+.status-text.closed {
+    color: #A9633B;
+}
+
+.openingstijden-list {
+    margin-bottom: 1.5rem;
+}
+
+.dag-rij {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(169, 99, 59, 0.2);
+}
+
+.dag-rij:last-child {
+    border-bottom: none;
+}
+
+.dag {
+    font-weight: 600;
+    color: #656434;
+    font-size: 1.1rem;
+}
+
+.tijd {
+    color: #A9633B;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.tijd.gesloten {
+    color: #A9633B;
+    font-style: italic;
+}
+
+.keuken-info {
+    text-align: center;
+    color: #A9633B;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(169, 99, 59, 0.15), rgba(169, 99, 59, 0.05));
+    border-radius: 15px;
+    border: 2px solid rgba(169, 99, 59, 0.3);
+    box-shadow: 0 4px 15px rgba(169, 99, 59, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.keuken-info.keuken-open {
+    border-color: rgba(169, 99, 59, 0.3);
+    color: #A9633B;
+}
+
+.keuken-info.keuken-gesloten {
+    border-color: rgba(169, 99, 59, 0.3);
+    color: #A9633B;
+    background: linear-gradient(135deg, rgba(169, 99, 59, 0.15), rgba(169, 99, 59, 0.05));
+}
+
+.keuken-info.keuken-gesloten-pulse {
+    border-color: #A9633B;
+    color: #A9633B;
+    background: linear-gradient(135deg, rgba(169, 99, 59, 0.2), rgba(169, 99, 59, 0.1));
+    animation: keukenPulse 2s infinite;
+}
+
+@keyframes keukenPulse {
+    0% {
+        border-color: #A9633B;
+        box-shadow: 0 4px 15px rgba(169, 99, 59, 0.2);
+    }
+    50% {
+        border-color: #A9633B;
+        box-shadow: 0 4px 25px rgba(169, 99, 59, 0.6), 0 0 20px rgba(169, 99, 59, 0.4);
+    }
+    100% {
+        border-color: #A9633B;
+        box-shadow: 0 4px 15px rgba(169, 99, 59, 0.2);
+    }
+}
+
+.keuken-info::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(169, 99, 59, 0.1), transparent);
+    transition: left 0.8s ease;
+}
+
+.keuken-info:hover::after {
+    left: 100%;
+}
+
+/* Contactgegevens sectie styling */
+.glass-contact-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
+    padding: 2.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-title-main {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #656434;
+    letter-spacing: 0.05em;
+}
+
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-item-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.contact-item-main:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(169, 99, 59, 0.25);
+    border-color: rgba(169, 99, 59, 0.3);
+}
+
+.contact-icon-main {
+    font-size: 2rem;
+    color: #A9633B;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.contact-details-main {
+    text-align: center;
+}
+
+.contact-details-main h3 {
+    color: #656434;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.contact-details-main p {
+    color: #A9633B;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.contact-details-main a {
+    color: #A9633B;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.contact-details-main a:hover {
+    color: #A9633B;
+    border-bottom-color: #A9633B;
+    transform: translateY(-1px);
+}
+
+/* Specifieke styling voor adres link in contactgegevens */
+.contact-item-main .contact-details-main a {
+    border-bottom: none;
+}
+
+.contact-item-main .contact-details-main a:hover {
+    border-bottom: none;
+}
+
+/* Responsive aanpassingen voor contactgegevens */
+@media (max-width: 768px) {
+    .glass-contact-container {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .contact-title-main {
+        font-size: 2.2rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .contact-item-main {
+        padding: 1rem 1.2rem;
+    }
+    
+    .contact-icon-main {
+        font-size: 1.6rem;
+    }
+}
+
+/* Responsive styling voor contact pagina */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 3.5rem;
+        margin: 2rem 0 1.5rem;
+    }
+    
+    .contact-section {
+        width: 95%;
+        margin: 1.5rem auto;
+    }
+    
+    .map-openingstijden-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-info-container,
+    .glass-troeven-container {
+        padding: 2rem;
+        border-radius: 25px;
+    }
+    
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .contact-card h2,
+    .glass-troeven-container h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .contact-title-main {
+        font-size: 2.2rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .troeven-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    
+    .troef-item {
+        padding: 1.2rem;
+    }
+    
+    .troef-icon {
+        font-size: 2rem;
+    }
+    
+    .troef-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .troef-content p {
+        font-size: 0.9rem;
+    }
+    
+    .location-info {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .address-details h3 {
+        font-size: 1.1rem;
+    }
+    
+    .keuken-info {
+        padding: 0.8rem 1.2rem;
+        margin-top: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .status-indicator {
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.5rem;
+        border-radius: 18px;
+    }
+    
+    .status-dot {
+        width: 14px;
+        height: 14px;
+        border-width: 2px;
+    }
+    
+    .status-dot::after {
+        width: 5px;
+        height: 5px;
+    }
+    
+    .status-text {
+        font-size: 1.1rem;
+    }
+    
+    .route-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-title {
+        font-size: 3rem;
+        margin: 1.5rem 0 1.2rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-info-container,
+    .glass-troeven-container {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .contact-card h2,
+    .glass-troeven-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-title-main {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-card {
+        padding: 1.2rem;
+        border-radius: 20px;
+    }
+    
+    .troeven-grid {
+        gap: 1rem;
+    }
+    
+    .troef-item {
+        padding: 1rem;
+    }
+    
+    .troef-icon {
+        font-size: 1.8rem;
+    }
+    
+    .troef-content h3 {
+        font-size: 1rem;
+    }
+    
+    .troef-content p {
+        font-size: 0.85rem;
+    }
+    
+    .location-info {
+        padding: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .address-details h3 {
+        font-size: 1rem;
+    }
+    
+    .keuken-info {
+        padding: 0.7rem 1rem;
+        margin-top: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .status-indicator {
+        padding: 0.8rem 1rem;
+        margin-bottom: 1.2rem;
+        border-radius: 16px;
+    }
+    
+    .status-dot {
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+    
+    .status-dot::after {
+        width: 4px;
+        height: 4px;
+    }
+    
+    .status-text {
+        font-size: 1rem;
+    }
+    
+    .dag-rij {
+        padding: 0.6rem 0;
+    }
+    
+    .dag {
+        font-size: 1rem;
+    }
+    
+    .tijd {
+        font-size: 0.9rem;
+    }
+    
+    .contact-item {
+        padding: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .contact-icon {
+        font-size: 1.5rem;
+    }
+    
+    .contact-details h3 {
+        font-size: 1rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.9rem;
+    }
+    
+    .route-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 2.5rem;
+        margin: 1.2rem 0 1rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-info-container,
+    .glass-troeven-container {
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
+    
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .contact-card h2,
+    .glass-troeven-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .contact-card {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    
+    .troeven-grid {
+        gap: 0.8rem;
+    }
+    
+    .troef-item {
+        padding: 0.8rem;
+    }
+    
+    .troef-icon {
+        font-size: 1.5rem;
+    }
+    
+    .troef-content h3 {
+        font-size: 0.9rem;
+    }
+    
+    .troef-content p {
+        font-size: 0.8rem;
+    }
+    
+    .location-info {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .address-details h3 {
+        font-size: 0.9rem;
+    }
+    
+    .keuken-info {
+        padding: 0.6rem 0.8rem;
+        margin-top: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .status-indicator {
+        padding: 0.6rem 0.8rem;
+        margin-bottom: 1rem;
+        border-radius: 14px;
+    }
+    
+    .status-dot {
+        width: 10px;
+        height: 10px;
+        border-width: 1.5px;
+    }
+    
+    .status-dot::after {
+        width: 3px;
+        height: 3px;
+    }
+    
+    .status-text {
+        font-size: 0.9rem;
+    }
+    
+    .dag-rij {
+        padding: 0.5rem 0;
+    }
+    
+    .dag {
+        font-size: 0.9rem;
+    }
+    
+    .tijd {
+        font-size: 0.8rem;
+    }
+    
+    .contact-item {
+        padding: 0.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-icon {
+        font-size: 1.3rem;
+    }
+    
+    .contact-details h3 {
+        font-size: 0.9rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.8rem;
+    }
+    
+    .route-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+  
+/* Troeven sectie styling */
+.glass-troeven-container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
+    padding: 2.5rem;
+}
+
+.glass-troeven-container h2 {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #656434;
+    letter-spacing: 0.05em;
+}
+
+.troeven-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.troef-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(101, 100, 52, 0.15);
+}
+
+.troef-item:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(101, 100, 52, 0.25);
+}
+
+.troef-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.troef-item:hover::before {
+    left: 100%;
+}
+
+.troef-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.troef-content h3 {
+    color: #656434;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.troef-content p {
+    color: #656434;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+}
+  
+/* Troeven sectie styling voor index.html */
+.troeven-section {
+    margin: 3rem 0;
+    padding: 0 2rem;
+}
+
+.troeven-section .glass-troeven-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive aanpassingen voor troeven sectie */
+@media (max-width: 768px) {
+    .troeven-section {
+        margin: 2.5rem 0;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .troeven-section {
+        margin: 2rem 0;
+        padding: 0 1rem;
+    }
+}
+  
   
