@@ -1209,6 +1209,7 @@ nav ul li a:focus {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 .glass-map-container {
@@ -1219,6 +1220,7 @@ nav ul li a:focus {
     border-radius: 30px;
     padding: 2.5rem;
     box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
+    width: 100%;
 }
 
 .glass-map-container h2 {
@@ -1238,6 +1240,7 @@ nav ul li a:focus {
     border-radius: 30px;
     box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
     padding: 2.5rem;
+    width: 100%;
 }
 
 .glass-openingstijden-container h2 {
@@ -1782,6 +1785,7 @@ nav ul li a:focus {
         padding: 2rem;
         margin: 0;
         max-width: none;
+        width: 100%;
     }
     
     .contact-title-main {
@@ -1801,6 +1805,7 @@ nav ul li a:focus {
     .glass-map-container,
     .glass-openingstijden-container {
         max-width: none;
+        width: 100%;
     }
 }
 
@@ -1819,6 +1824,7 @@ nav ul li a:focus {
     .map-openingstijden-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+        width: 100%;
     }
     
     .glass-map-container,
@@ -1828,9 +1834,7 @@ nav ul li a:focus {
     .glass-contact-container {
         padding: 2rem;
         border-radius: 25px;
-    }
-    
-    .glass-contact-container {
+        width: 100%;
         max-width: none;
     }
     
@@ -1846,12 +1850,6 @@ nav ul li a:focus {
     .contact-title-main {
         font-size: 2.2rem;
         margin-bottom: 1.8rem;
-    }
-    
-    /* Zorg ervoor dat alle secties dezelfde breedte hebben op kleine schermen */
-    .glass-map-container,
-    .glass-openingstijden-container {
-        max-width: none;
     }
     
     .troeven-grid {
@@ -1930,9 +1928,7 @@ nav ul li a:focus {
     .glass-contact-container {
         padding: 1.5rem;
         border-radius: 20px;
-    }
-    
-    .glass-contact-container {
+        width: 100%;
         max-width: none;
     }
     
@@ -1948,12 +1944,6 @@ nav ul li a:focus {
     .contact-title-main {
         font-size: 2rem;
         margin-bottom: 1.5rem;
-    }
-    
-    /* Zorg ervoor dat alle secties dezelfde breedte hebben op kleine schermen */
-    .glass-map-container,
-    .glass-openingstijden-container {
-        max-width: none;
     }
     
     .contact-card {
