@@ -1224,6 +1224,25 @@ nav ul li a:focus {
     letter-spacing: 0.05em;
 }
 
+/* Responsive h2 styling voor alle secties */
+@media (max-width: 768px) {
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .glass-contact-container h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .glass-contact-container h2 {
+        font-size: 2.3rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
 .glass-map-container {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -1248,14 +1267,7 @@ nav ul li a:focus {
     width: 100%;
 }
 
-.glass-openingstijden-container h2 {
-    font-family: 'Chatara Regular', Arial, sans-serif;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: #656434;
-    letter-spacing: 0.05em;
-}
+
 
 .location-info {
     background: rgba(255, 255, 255, 0.3);
@@ -1824,13 +1836,7 @@ nav ul li a:focus {
         max-width: none;
     }
     
-    /* Responsive h2 styling voor alle secties */
-    .glass-map-container h2,
-    .glass-openingstijden-container h2,
-    .glass-contact-container h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.8rem;
-    }
+
     
     .troeven-grid {
         grid-template-columns: 1fr;
@@ -1912,13 +1918,7 @@ nav ul li a:focus {
         max-width: none;
     }
     
-    /* Responsive h2 styling voor alle secties - kleine schermen */
-    .glass-map-container h2,
-    .glass-openingstijden-container h2,
-    .glass-contact-container h2 {
-        font-size: 2.3rem;
-        margin-bottom: 1.5rem;
-    }
+
     
     .contact-card {
         padding: 1.2rem;
