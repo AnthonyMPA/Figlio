@@ -1687,7 +1687,6 @@ nav ul li a:focus {
     border-radius: 30px;
     box-shadow: 0 8px 32px rgba(101, 100, 52, 0.2);
     padding: 2.5rem;
-    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -1779,8 +1778,8 @@ nav ul li a:focus {
 /* Responsive aanpassingen voor contactgegevens */
 @media (max-width: 768px) {
     .glass-contact-container {
-        padding: 2rem 1.5rem;
-        margin: 0 1rem;
+        padding: 2rem;
+        margin: 0;
     }
     
     .contact-title-main {
@@ -1817,7 +1816,8 @@ nav ul li a:focus {
     .glass-map-container,
     .glass-openingstijden-container,
     .glass-info-container,
-    .glass-troeven-container {
+    .glass-troeven-container,
+    .glass-contact-container {
         padding: 2rem;
         border-radius: 25px;
     }
@@ -1825,7 +1825,8 @@ nav ul li a:focus {
     .glass-map-container h2,
     .glass-openingstijden-container h2,
     .contact-card h2,
-    .glass-troeven-container h2 {
+    .glass-troeven-container h2,
+    .glass-contact-container h2 {
         font-size: 2.2rem;
         margin-bottom: 1.8rem;
     }
@@ -1907,7 +1908,8 @@ nav ul li a:focus {
     .glass-map-container,
     .glass-openingstijden-container,
     .glass-info-container,
-    .glass-troeven-container {
+    .glass-troeven-container,
+    .glass-contact-container {
         padding: 1.5rem;
         border-radius: 20px;
     }
@@ -1915,7 +1917,8 @@ nav ul li a:focus {
     .glass-map-container h2,
     .glass-openingstijden-container h2,
     .contact-card h2,
-    .glass-troeven-container h2 {
+    .glass-troeven-container h2,
+    .glass-contact-container h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
     }
