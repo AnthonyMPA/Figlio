@@ -1243,6 +1243,15 @@ nav ul li a:focus {
     }
 }
 
+@media (max-width: 375px) {
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .glass-contact-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
 .glass-map-container {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
