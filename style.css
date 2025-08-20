@@ -1796,6 +1796,12 @@ nav ul li a:focus {
     .contact-icon-main {
         font-size: 1.6rem;
     }
+    
+    /* Zorg ervoor dat alle secties dezelfde breedte hebben op kleine schermen */
+    .glass-map-container,
+    .glass-openingstijden-container {
+        max-width: none;
+    }
 }
 
 /* Responsive styling voor contact pagina */
@@ -1840,6 +1846,12 @@ nav ul li a:focus {
     .contact-title-main {
         font-size: 2.2rem;
         margin-bottom: 1.8rem;
+    }
+    
+    /* Zorg ervoor dat alle secties dezelfde breedte hebben op kleine schermen */
+    .glass-map-container,
+    .glass-openingstijden-container {
+        max-width: none;
     }
     
     .troeven-grid {
@@ -1936,6 +1948,12 @@ nav ul li a:focus {
     .contact-title-main {
         font-size: 2rem;
         margin-bottom: 1.5rem;
+    }
+    
+    /* Zorg ervoor dat alle secties dezelfde breedte hebben op kleine schermen */
+    .glass-map-container,
+    .glass-openingstijden-container {
+        max-width: none;
     }
     
     .contact-card {
