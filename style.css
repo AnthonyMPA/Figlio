@@ -1217,10 +1217,10 @@ nav ul li a:focus {
 .glass-openingstijden-container h2,
 .glass-contact-container h2 {
     font-family: 'Chatara Regular', Arial, sans-serif;
-    font-size: 3rem !important;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
     text-align: center;
-    color: #ff0000 !important; /* Test kleur - rood op alle schermen */
+    color: #656434;
     letter-spacing: 0.05em;
 }
 
@@ -1828,9 +1828,8 @@ nav ul li a:focus {
     .glass-map-container h2,
     .glass-openingstijden-container h2,
     .glass-contact-container h2 {
-        font-size: 2.5rem !important;
+        font-size: 2.5rem;
         margin-bottom: 1.8rem;
-        background-color: #00ff00 !important; /* Test achtergrond - groen op tablet */
     }
     
     .troeven-grid {
@@ -1917,10 +1916,8 @@ nav ul li a:focus {
     .glass-map-container h2,
     .glass-openingstijden-container h2,
     .glass-contact-container h2 {
-        font-size: 2.3rem !important;
+        font-size: 2.3rem;
         margin-bottom: 1.5rem;
-        color: #ff0000 !important; /* Test kleur - rood op kleine schermen */
-        background-color: #ffff00 !important; /* Test achtergrond - geel op kleine schermen */
     }
     
     .contact-card {
