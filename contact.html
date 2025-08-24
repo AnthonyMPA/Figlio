@@ -6,8 +6,195 @@
     <title>Figlio - Pasta & Pizza</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="images/figlio_logo_tabbar.jpg">
+    <style>
+        .restomanager-container {
+            position: fixed;
+            bottom: 10px;
+            right: 0px;
+            width: 380px;
+            height: 500px;
+            z-index: 9999;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            overflow: visible;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .restomanager-container.collapsed {
+            transform: translateY(calc(100% - 60px));
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .restomanager-container.collapsed .restomanager-toggle {
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(169, 99, 59, 0.3);
+        }
+        
+        .restomanager-container.collapsed .restomanager-iframe {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .restomanager-iframe {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.3s ease;
+        }
+        
+        .restomanager-toggle {
+            position: absolute;
+            top: -5px;
+            left: 70%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 60px;
+            background: linear-gradient(135deg, #A9633B, #8B4513);
+            color: #E9E2D2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: normal;
+            font-size: 32px;
+            border-radius: 15px 15px 0 0;
+            z-index: 10000;
+            font-family: 'Chatara Regular', Arial, sans-serif;
+            letter-spacing: 0.05em;
+            box-shadow: 0 6px 20px rgba(169, 99, 59, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            animation: borderPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes borderPulse {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+        
+        .toggle-text {
+            font-size: 32px;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #A9633B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50%;
+            z-index: 10001;
+            transition: all 0.3s ease;
+            border: 2px solid #A9633B;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .close-button:hover {
+            background: #A9633B;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(169, 99, 59, 0.3);
+        }
+        
+        .restomanager-container.collapsed .close-button {
+            display: none;
+        }
+        
+        .restomanager-container:not(.collapsed) .restomanager-toggle {
+            display: none;
+        }
+        
+        .restomanager-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px 15px 0 0;
+            background: white;
+        }
+        
+        /* Responsive aanpassingen */
+        @media (max-width: 768px) {
+            .restomanager-container {
+                width: 340px;
+                height: 400px;
+                bottom: 8px;
+                right: 0px;
+            }
+            
+            .restomanager-toggle {
+                width: 160px;
+                height: 50px;
+                font-size: 26px;
+                left: 75%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .restomanager-container {
+                width: 320px;
+                height: 350px;
+                bottom: 5px;
+                right: 0px;
+            }
+            
+            .restomanager-toggle {
+                width: 140px;
+                height: 45px;
+                font-size: 22px;
+                left: 80%;
+                top: -3px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .restomanager-container {
+                width: 300px;
+                height: 320px;
+                bottom: 3px;
+                right: 0px;
+            }
+            
+            .restomanager-toggle {
+                width: 120px;
+                height: 40px;
+                font-size: 20px;
+                left: 85%;
+                top: -2px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- RestoManager Reservatie Widget -->
+    <div class="restomanager-container collapsed">
+        <div class="restomanager-toggle" id="restomanager-toggle">
+            <span class="toggle-text">Reserveren</span>
+        </div>
+        <div class="close-button" id="close-button">✕</div>
+        <iframe title="RestoManager" src="https://book.restomanager.net/reservations/68a2e0c092408ce09956de44" frameborder="0" class="restomanager-iframe"></iframe>
+    </div>
+    
     <header>
         <nav>
             <div id="logo-nav">
@@ -32,15 +219,87 @@
         <div class="main-container">
             <h1 class="contact-title">Contact</h1>
             
-            <!-- Kaart en Openingstijden sectie -->
-            <div class="contact-section">
-                <div class="map-openingstijden-grid">
-                    <!-- Kaart -->
+            <!-- Groot glaselement voor alle secties -->
+            <div class="glass-main-container">
+                <!-- Contactgegevens en Openingstijden sectie -->
+                <div class="contact-section">
+                    <div class="map-openingstijden-grid">
+                        <!-- Contactgegevens -->
+                        <div class="glass-contact-container">
+                            <h2 class="contact-title-main">Contactgegevens</h2>
+                            <div class="contact-grid">
+                                <div class="contact-item-main">
+                                    <div class="contact-icon-main"><img src="images/pin.png" alt="Pin" class="contact-icon-img"></div>
+                                    <div class="contact-details-main">
+                                        <h3>Adres</h3>
+                                        <p><a href="https://www.google.com/maps/dir//Landwaartslaan+11,+3600+Genk,+België" target="_blank">Landwaartslaan 11, 3600 Genk</a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-item-main">
+                                    <div class="contact-icon-main"><img src="images/telephone.png" alt="Telefoon" class="contact-icon-img"></div>
+                                    <div class="contact-details-main">
+                                        <h3>Telefoon</h3>
+                                        <p><a href="tel:089412345">089 41 23 45</a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-item-main">
+                                    <div class="contact-icon-main"><img src="images/email.png" alt="E-mail" class="contact-icon-img"></div>
+                                    <div class="contact-details-main">
+                                        <h3>E-mail</h3>
+                                        <p><a href="mailto:info@figlio.be">info@figlio.be</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Openingstijden -->
+                        <div class="glass-openingstijden-container">
+                            <h2>Openingstijden</h2>
+                            <div class="status-indicator" id="status-indicator">
+                                <span class="status-dot" id="status-dot"></span>
+                                <span class="status-text" id="status-text">Berekenen...</span>
+                            </div>
+                            <div class="openingstijden-list">
+                                <div class="dag-rij">
+                                    <span class="dag">Maandag</span>
+                                    <span class="tijd gesloten">Gesloten</span>
+                                </div>
+                                <div class="dag-rij">
+                                    <span class="dag">Dinsdag</span>
+                                    <span class="tijd gesloten">Gesloten</span>
+                                </div>
+                                <div class="dag-rij">
+                                    <span class="dag">Woensdag</span>
+                                    <span class="tijd">17:00 - 22:00</span>
+                                </div>
+                                <div class="dag-rij">
+                                    <span class="dag">Donderdag</span>
+                                    <span class="tijd">17:00 - 22:00</span>
+                                </div>
+                                <div class="dag-rij">
+                                    <span class="dag">Vrijdag</span>
+                                    <span class="tijd">17:00 - 22:00</span>
+                                </div>
+                                <div class="dag-rij">
+                                    <span class="dag">Zaterdag</span>
+                                    <span class="tijd">17:00 - 22:00</span>
+                                </div>
+                                <div class="dag-rij">
+                                    <span class="dag">Zondag</span>
+                                    <span class="tijd">17:00 - 22:00</span>
+                                </div>
+                            </div>
+                            <p class="keuken-info">Keuken sluit om 21:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kaart sectie -->
+                <div class="contact-section">
                     <div class="glass-map-container">
                         <h2>Onze Locatie</h2>
                         <div class="location-info">
                             <div class="address-info">
-                                <div class="address-icon">📍</div>
                                 <div class="address-details">
                                     <h3><a href="https://www.google.com/maps/place/Landwaartslaan+11,+3600+Genk" target="_blank" class="address-link">Landwaartslaan 11, 3600 Genk</a></h3>
                                 </div>
@@ -48,7 +307,6 @@
                         </div>
                         <div class="map-actions">
                             <a href="https://www.google.com/maps/dir//Landwaartslaan+11,+3600+Genk" target="_blank" class="route-button">
-                                <span class="route-icon">🚗</span>
                                 <span class="route-text">Routebeschrijving</span>
                                 <span class="route-arrow">→</span>
                             </a>
@@ -63,76 +321,6 @@
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
-                        </div>
-                    </div>
-
-                    <!-- Openingstijden -->
-                    <div class="glass-openingstijden-container">
-                        <h2>Openingstijden</h2>
-                        <div class="status-indicator" id="status-indicator">
-                            <span class="status-dot" id="status-dot"></span>
-                            <span class="status-text" id="status-text">Berekenen...</span>
-                        </div>
-                        <div class="openingstijden-list">
-                            <div class="dag-rij">
-                                <span class="dag">Maandag</span>
-                                <span class="tijd gesloten">Gesloten</span>
-                            </div>
-                            <div class="dag-rij">
-                                <span class="dag">Dinsdag</span>
-                                <span class="tijd gesloten">Gesloten</span>
-                            </div>
-                            <div class="dag-rij">
-                                <span class="dag">Woensdag</span>
-                                <span class="tijd">17:00 - 22:00</span>
-                            </div>
-                            <div class="dag-rij">
-                                <span class="dag">Donderdag</span>
-                                <span class="tijd">17:00 - 22:00</span>
-                            </div>
-                            <div class="dag-rij">
-                                <span class="dag">Vrijdag</span>
-                                <span class="tijd">17:00 - 22:00</span>
-                            </div>
-                            <div class="dag-rij">
-                                <span class="dag">Zaterdag</span>
-                                <span class="tijd">17:00 - 22:00</span>
-                            </div>
-                            <div class="dag-rij">
-                                <span class="dag">Zondag</span>
-                                <span class="tijd">17:00 - 22:00</span>
-                            </div>
-                        </div>
-                        <p class="keuken-info" id="keuken-info">Keuken sluit om 21:00</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contactgegevens sectie -->
-            <div class="contact-section">
-                <div class="glass-contact-container">
-                    <h2 class="contact-title-main">Contactgegevens</h2>
-                    <div class="contact-grid">
-                        <div class="contact-item-main">
-                            <div class="contact-icon-main">📍</div>
-                            <div class="contact-details-main">
-                                <h3>Adres</h3>
-                                <p><a href="https://www.google.com/maps/dir//Landwaartslaan+11,+3600+Genk,+België" target="_blank">Landwaartslaan 11<br>3600 Genk</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item-main">
-                            <div class="contact-icon-main">📞</div>
-                            <div class="contact-details-main">
-                                <h3>Telefoon</h3>
-                                <p><a href="tel:089412345">089 41 23 45</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item-main">
-                            <div class="contact-icon-main">📧</div>
-                            <div class="contact-details-main">
-                                <h3>E-mail</h3>
-                                <p><a href="mailto:info@figlio.be">info@figlio.be</a></p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -188,42 +376,25 @@
             
             let isOpen = false;
             let statusText = '';
-            let keukenStatus = '';
-            let keukenClass = '';
             
             // Maandag (1) en Dinsdag (2) zijn gesloten
             if (currentDay === 1 || currentDay === 2) {
                 isOpen = false;
                 statusText = 'VANDAAG GESLOTEN';
-                keukenStatus = 'Keuken is gesloten';
-                keukenClass = 'keuken-gesloten';
             } else {
                 // Woensdag t/m Zondag: 17:00 - 22:00
                 const openTime = 17 * 60; // 17:00
                 const closeTime = 22 * 60; // 22:00
-                const keukenCloseTime = 21 * 60; // 21:00
                 
                 if (currentTime >= openTime && currentTime < closeTime) {
                     isOpen = true;
                     statusText = 'NU OPEN';
-                    
-                    if (currentTime >= keukenCloseTime) {
-                        keukenStatus = 'Keuken is nu gesloten';
-                        keukenClass = 'keuken-gesloten-pulse';
-                    } else {
-                        keukenStatus = 'Keuken sluit om 21:00';
-                        keukenClass = 'keuken-open';
-                    }
                 } else if (currentTime < openTime) {
                     isOpen = false;
                     statusText = 'VANDAAG OPEN VANAF 17:00';
-                    keukenStatus = 'Keuken sluit om 21:00';
-                    keukenClass = 'keuken-open';
                 } else {
                     isOpen = false;
                     statusText = 'VANDAAG GESLOTEN';
-                    keukenStatus = 'Keuken is gesloten';
-                    keukenClass = 'keuken-gesloten';
                 }
             }
             
@@ -231,18 +402,12 @@
             const statusDot = document.getElementById('status-dot');
             const statusTextElement = document.getElementById('status-text');
             const statusIndicator = document.getElementById('status-indicator');
-            const keukenInfoElement = document.getElementById('keuken-info');
             
             if (statusDot && statusTextElement && statusIndicator) {
                 statusDot.className = `status-dot ${isOpen ? 'open' : 'closed'}`;
                 statusTextElement.textContent = statusText;
                 statusTextElement.className = `status-text ${isOpen ? 'open' : 'closed'}`;
                 statusIndicator.className = `status-indicator ${isOpen ? 'open' : 'closed'}`;
-            }
-            
-            if (keukenInfoElement) {
-                keukenInfoElement.textContent = keukenStatus;
-                keukenInfoElement.className = `keuken-info ${keukenClass}`;
             }
         }
         
@@ -295,6 +460,19 @@
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
+        });
+        
+        // RestoManager Widget Toggle functionaliteit
+        const restomanagerToggle = document.getElementById('restomanager-toggle');
+        const restomanagerContainer = document.querySelector('.restomanager-container');
+        const closeButton = document.getElementById('close-button');
+        
+        restomanagerToggle.addEventListener('click', function() {
+            restomanagerContainer.classList.remove('collapsed');
+        });
+        
+        closeButton.addEventListener('click', function() {
+            restomanagerContainer.classList.add('collapsed');
         });
     </script>
 </body>
