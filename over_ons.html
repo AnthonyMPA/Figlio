@@ -8,7 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Figlio - Pasta & Pizza</title>
     <link rel="stylesheet" href="style.css?v=1.0.1">
-    <link rel="icon" type="image/jpg" href="images/figlio_logo_tabbar.jpg">
+    <link rel="icon" type="image/png" href="images/figlio_tabbar2.png?v=1">
     <style>
         .restomanager-container {
             position: fixed;
@@ -237,66 +237,67 @@
      </div>
     </main>
     <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-address">
-                <h3>ADRES</h3>
-                <p>Landwaartslaan 11<br>3600 Genk</p>
-                <div class="footer-contact">
-                    <p>E-mail: <a href="mailto:info@figlio.be">info@figlio.be</a></p>
-                    <p>Tel: <a href="tel:089412345">089 41 23 45</a></p>
-                </div>
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo-section">
+                <img src="images/figlio_logo_footer.png" alt="Figlio Logo" class="footer-main-logo">
             </div>
-            <div class="footer-openingstijden" id="footer-openingstijden">
-                <h3 id="openingstijden-titel">OPENINGSTIJDEN</h3>
-                <div class="openingstijden-container" id="openingstijden-container">
-                    <p>Maandag: Gesloten</p>
-                    <p>Dinsdag: Gesloten</p>
-                    <p>Woensdag - Zondag: 17:00 - 22:00</p>
-                    <p>Keuken sluit om 21:00</p>
-                </div>
-            </div>
-            <div class="footer-brand">
-                <img src="images/figlio_logo_footer.png" alt="Figlio Logo" class="footer-logo">
-                <div class="footer-social">
-                    <div class="social-item">
-                        <a href="https://www.instagram.com/figlio.genk/" target="_blank" aria-label="Volg ons op Instagram">
-                            <img src="images/instagram-icon.svg" alt="Instagram" class="instagram-icon">
-                        </a>
-                        <a href="https://www.instagram.com/figlio.genk/" target="_blank">@figlio.genk</a>
+
+            <!-- Main Content -->
+            <div class="footer-content">
+                <div class="footer-row">
+                    <div class="footer-section">
+                        <h4>ADRES</h4>
+                        <div class="section-content">
+                            <p class="address">Landwaartslaan 11<br>3600 Genk</p>
+                            <p class="contact-info">
+                                <span class="contact-label">E-mail:</span>
+                                <a href="mailto:info@figlio.be" class="contact-link">info@figlio.be</a>
+                            </p>
+                            <p class="contact-info">
+                                <span class="contact-label">Tel:</span>
+                                <a href="tel:089412345" class="contact-link">089 41 23 45</a>
+                            </p>
+                            <p class="contact-info">
+                                <span class="contact-label">BTW:</span>
+                                <span class="btw-number">BE1024947332</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="social-item">
-                        <a href="https://www.facebook.com/figlio.genk/" target="_blank" aria-label="Volg ons op Facebook">
-                            <img src="images/facebook-icon.svg" alt="Facebook" class="instagram-icon">
-                        </a>
-                        <span>Figlio Genk</span>
+
+                    <div class="footer-section">
+                        <h4>OPENINGSTIJDEN</h4>
+                        <div class="section-content">
+                            <div class="hours-schedule">
+                                <p class="hours-item"><span class="day">Maandag:</span> <span class="time">Gesloten</span></p>
+                                <p class="hours-item"><span class="day">Dinsdag:</span> <span class="time">Gesloten</span></p>
+                                <p class="hours-item"><span class="day">Woensdag - Zondag:</span> <span class="time">17:00 - 22:30</span></p>
+                                <p class="hours-note">Keuken sluit om 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>VOLG ONS</h4>
+                        <div class="section-content">
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/figlio.genk/" target="_blank" class="social-link instagram">
+                                    <img src="images/instagram-icon.svg" alt="Instagram" class="social-icon">
+                                    <span class="social-text">@figlio.genk</span>
+                                </a>
+                                <a href="https://www.facebook.com/figlio.genk/" target="_blank" class="social-link facebook">
+                                    <img src="images/facebook-icon.svg" alt="Facebook" class="social-icon">
+                                    <span class="social-text">Figlio Genk</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     <script>
-        // Responsieve footer functionaliteit
-        function adjustFooter() {
-            if (window.innerWidth <= 640) {
-                document.getElementById('openingstijden-titel').style.textAlign = 'center';
-                document.getElementById('openingstijden-container').style.textAlign = 'center';
-                var openingsUren = document.querySelectorAll('#openingstijden-container p');
-                for (var i = 0; i < openingsUren.length; i++) {
-                    openingsUren[i].style.textAlign = 'center';
-                }
-            } else {
-                document.getElementById('openingstijden-titel').style.textAlign = 'left';
-                document.getElementById('openingstijden-container').style.textAlign = 'left';
-                var openingsUren = document.querySelectorAll('#openingstijden-container p');
-                for (var i = 0; i < openingsUren.length; i++) {
-                    openingsUren[i].style.textAlign = 'left';
-                }
-            }
-        }
-        
-        // Voer uit bij laden en bij resize
-        window.addEventListener('load', adjustFooter);
-        window.addEventListener('resize', adjustFooter);
+        // Footer blijft nu consistent gestructureerd via CSS
         
         // Hamburger menu functionaliteit
         const hamburger = document.getElementById('hamburger');
