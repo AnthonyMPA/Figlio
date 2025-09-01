@@ -580,7 +580,7 @@ nav ul li a:focus {
 }
 
 .preview-text {
-    font-family: "Bodoni 72", "Bodoni MT", Bodoni, Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     font-size: 1.1rem;
     line-height: 1.6;
     color: #656434;
@@ -646,7 +646,7 @@ nav ul li a:focus {
 }
 
 #p-main p {
-    font-family: "Bodoni 72", "Bodoni MT", Bodoni, Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     font-size: 1.2rem;
     line-height: 1.8;
     color: #656434;
@@ -1210,6 +1210,7 @@ nav ul li a:focus {
         flex-direction: column;
         gap: 0.3rem;
         text-align: center;
+        white-space: nowrap;
     }
 
     .contact-label {
@@ -1277,6 +1278,7 @@ nav ul li a:focus {
 
     .contact-info {
         margin-bottom: 0.6rem;
+        white-space: nowrap;
     }
 
     .contact-link {
@@ -2396,44 +2398,49 @@ nav ul li a:focus {
     }
     
     .glass-map-container,
-    .glass-openingstijden-container,
-    .glass-info-container,
-    .glass-troeven-container {
+    .glass-openingstijden-container {
         padding: 1.2rem;
         border-radius: 15px;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .glass-contact-container {
+        padding: 1.2rem;
+        border-radius: 15px;
+        min-height: 400px;
+    }
+    
+    .map-wrapper {
+        flex: 1;
+        min-height: 250px;
+    }
+    
+    .openingstijden-list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .status-indicator {
+        margin-bottom: 1rem;
+        padding: 0.6rem 0.8rem;
+        border-radius: 14px;
+    }
+    
+    .keuken-info {
+        margin-top: auto;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
     }
     
     .glass-map-container h2,
     .glass-openingstijden-container h2,
-    .contact-card h2,
-    .glass-troeven-container h2 {
-        font-size: 1.4rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .contact-card {
-        padding: 1rem;
-        border-radius: 12px;
-    }
-    
-    .troeven-grid {
-        gap: 0.8rem;
-    }
-    
-    .troef-item {
-        padding: 0.8rem;
-    }
-    
-    .troef-icon {
-        font-size: 1.5rem;
-    }
-    
-    .troef-content h3 {
-        font-size: 0.9rem;
-    }
-    
-    .troef-content p {
-        font-size: 0.8rem;
+    .glass-contact-container h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .location-info {
@@ -2443,18 +2450,6 @@ nav ul li a:focus {
     
     .address-details h3 {
         font-size: 0.9rem;
-    }
-    
-    .keuken-info {
-        padding: 0.6rem 0.8rem;
-        margin-top: 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .status-indicator {
-        padding: 0.6rem 0.8rem;
-        margin-bottom: 1rem;
-        border-radius: 14px;
     }
     
     .status-dot {
@@ -2484,21 +2479,17 @@ nav ul li a:focus {
         font-size: 0.8rem;
     }
     
-    .contact-item {
-        padding: 0.6rem;
-        margin-bottom: 1rem;
+    .contact-icon-main {
+        width: 45px;
+        height: 45px;
     }
     
-    .contact-icon {
-        font-size: 1.3rem;
-    }
-    
-    .contact-details h3 {
+    .contact-details-main h3 {
         font-size: 0.9rem;
     }
     
-    .contact-details p {
-        font-size: 0.8rem;
+    .contact-details-main p {
+        font-size: 0.85rem;
     }
     
     .route-button {
@@ -2509,6 +2500,54 @@ nav ul li a:focus {
     .route-icon {
         width: 1.5rem;
         height: 1.5rem;
+    }
+}
+
+/* Kleine apparaten zoals 430 x 932 - gelijke hoogtes voor alle secties */
+@media (max-width: 480px) {
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .glass-contact-container {
+        justify-content: flex-start;
+    }
+    
+    .contact-grid {
+        flex: 1;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+    
+    .contact-item-main {
+        flex: 1;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .map-wrapper {
+        flex: 1;
+        min-height: 200px;
+    }
+    
+    .openingstijden-list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .status-indicator {
+        margin-bottom: 1rem;
+    }
+    
+    .keuken-info {
+        margin-top: auto;
     }
 }
   
@@ -2618,6 +2657,7 @@ nav ul li a:focus {
     line-height: 1.5;
     margin: 0;
     opacity: 0.9;
+    font-family: 'Lato', Arial, sans-serif;
 }
   
 /* Troeven sectie styling voor index.html */
