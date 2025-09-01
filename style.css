@@ -1317,6 +1317,60 @@ nav ul li a:focus {
         font-size: 0.9rem;
     }
 }
+
+/* Footer bottom styling */
+.footer-bottom {
+    background-color: #656434;
+    border-top: 1px solid rgba(233, 226, 210, 0.2);
+    padding: 1.5rem 0;
+    margin-top: 0;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom-content p {
+    font-family: 'Poppins', Verdana, Geneva, sans-serif;
+    font-size: 0.95rem;
+    color: #E9E2D2;
+    margin: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .footer-bottom-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-bottom {
+        padding: 1rem 0;
+        margin-top: 0;
+    }
+    
+    .footer-bottom-content {
+        padding: 0 1rem;
+    }
+    
+    .footer-bottom-content p {
+        font-size: 0.85rem;
+    }
+}
   
 /* Over Ons page styling */
 .over-ons-title {
