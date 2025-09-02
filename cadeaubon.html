@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figlio - Pasta & Pizza</title>
+    <title>Cadeaubon - Figlio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/figlio_tabbar2.png?v=1">
     <style>
         .restomanager-container-voucher {
             position: relative;
             width: 100%;
-            min-height: 900px;
-            height: 900px;
+            height: 500px;
             overflow: hidden;
-            padding-top: 100%;
+            padding-top: 0;
         }
         
         .restomanager-iframe-voucher {
@@ -193,8 +192,8 @@
         
         @media (max-width: 480px) {
             .restomanager-container {
-                width: 320px;
-                height: 450px;
+                width: 360px;
+                height: 520px;
                 bottom: 5px;
                 right: 0;
                 border-radius: 15px 15px 0 0;
@@ -209,10 +208,28 @@
             }
         }
         
+        /* Specifieke styling voor 390x844 formaat - grotere widget */
+        @media (max-width: 390px) and (max-height: 844px) {
+            .restomanager-container {
+                width: 370px;
+                height: 550px;
+                bottom: 5px;
+                right: 0;
+            }
+            
+            .restomanager-toggle {
+                width: 130px;
+                height: 42px;
+                font-size: 21px;
+                left: 78%;
+                top: -2px;
+            }
+        }
+        
         @media (max-width: 430px) {
             .restomanager-container {
-                width: 300px;
-                height: 420px;
+                width: 350px;
+                height: 500px;
                 bottom: 5px;
                 right: 0;
             }
@@ -221,7 +238,7 @@
                 width: 120px;
                 height: 40px;
                 font-size: 20px;
-                left: 70%;
+                left: 78%;
                 top: -2px;
             }
         }
@@ -239,6 +256,169 @@
                 height: 38px;
                 font-size: 18px;
                 left: 65%;
+            }
+        }
+        
+        /* Cadeaubon Voorwaarden Styling */
+        .voucher-terms-section {
+            background: transparent;
+            padding: 10px 20px 20px 20px;
+            margin-top: 0;
+        }
+        
+        .voucher-terms-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: transparent;
+            padding: 20px 0;
+        }
+        
+        .voucher-terms-title {
+            text-align: center;
+            font-family: 'Chatara Regular', Arial, sans-serif;
+            font-size: 2.2em;
+            color: #A9633B;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .voucher-terms-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .voucher-term-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0;
+            background: transparent;
+            border: none;
+        }
+        
+        .voucher-term-icon {
+            min-width: 34px;
+            text-align: center;
+            background: transparent;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .icon-image {
+            width: 32px;
+            height: 32px;
+            filter: brightness(0) saturate(100%) invert(25%) sepia(100%) saturate(2000%) hue-rotate(15deg) brightness(0.6) contrast(1.1);
+        }
+        
+        .voucher-term-text h3 {
+            font-family: 'Poppins', Verdana, Geneva, sans-serif;
+            font-size: 1em;
+            color: #656434;
+            margin: 0;
+            font-weight: 600;
+            display: inline;
+        }
+        
+        .voucher-term-text p {
+            font-family: 'Poppins', Verdana, Geneva, sans-serif;
+            font-size: 0.9em;
+            color: #5a5a5a;
+            line-height: 1.4;
+            margin: 0;
+            display: inline;
+        }
+        
+        .voucher-term-text strong {
+            color: #A9633B;
+            font-weight: 600;
+        }
+        
+        /* Responsive design voor voorwaarden sectie */
+        @media (max-width: 768px) {
+            .voucher-terms-section {
+                padding: 10px 15px 15px 15px;
+            }
+            
+            .voucher-terms-container {
+                padding: 15px 0;
+            }
+            
+            .voucher-terms-title {
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+            
+            .voucher-terms-content {
+                gap: 12px;
+            }
+            
+            .voucher-term-item {
+                gap: 12px;
+            }
+            
+            .voucher-term-icon {
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+            }
+            
+            .icon-image {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .voucher-term-text h3 {
+                font-size: 0.95em;
+            }
+            
+            .voucher-term-text p {
+                font-size: 0.85em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .voucher-terms-section {
+                padding: 10px 10px 15px 10px;
+            }
+            
+            .voucher-terms-container {
+                padding: 10px 0;
+            }
+            
+            .voucher-terms-title {
+                font-size: 1.8em;
+                margin-bottom: 12px;
+            }
+            
+            .voucher-terms-content {
+                gap: 10px;
+            }
+            
+            .voucher-term-item {
+                gap: 10px;
+            }
+            
+            .voucher-term-icon {
+                width: 28px;
+                height: 28px;
+                min-width: 28px;
+            }
+            
+            .icon-image {
+                width: 26px;
+                height: 26px;
+            }
+            
+            .voucher-term-text h3 {
+                font-size: 0.9em;
+            }
+            
+            .voucher-term-text p {
+                font-size: 0.8em;
             }
         }
     </style>
@@ -277,6 +457,44 @@
      <div class="main-container">
         <div class="restomanager-container-voucher">
             <iframe title="RestoManager Voucher" src="https://book.restomanager.net/vouchers/68a2e0c092408ce09956de44" frameborder="0" class="restomanager-iframe-voucher"></iframe>
+        </div>
+        
+        <!-- Cadeaubon Voorwaarden Sectie -->
+        <div class="voucher-terms-section">
+            <div class="voucher-terms-container">
+                <h2 class="voucher-terms-title">Cadeaubon Voorwaarden</h2>
+                <div class="voucher-terms-content">
+                    <div class="voucher-term-item">
+                        <div class="voucher-term-icon">
+                            <img src="images/klok.png" alt="Klok" class="icon-image">
+                        </div>
+                        <div class="voucher-term-text">
+                            <h3>Geldigheid</h3>
+                            <p>Deze cadeaubon is <strong>1 jaar geldig</strong> vanaf de datum van aankoop.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="voucher-term-item">
+                        <div class="voucher-term-icon">
+                            <img src="images/cadeaubon.png" alt="Cadeaubon" class="icon-image">
+                        </div>
+                        <div class="voucher-term-text">
+                            <h3>Gebruik bij reservering</h3>
+                            <p>Je kunt deze cadeaubon <strong>optioneel</strong> ingeven bij het maken van een online reservering. Het is niet verplicht om de cadeaubon te vermelden bij de reservering.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="voucher-term-item">
+                        <div class="voucher-term-icon">
+                            <img src="images/betalen.png" alt="Betalen" class="icon-image">
+                        </div>
+                        <div class="voucher-term-text">
+                            <h3>Betalen</h3>
+                            <p>De cadeaubon kan gebruikt worden voor alle gerechten en dranken op onze menukaart.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
      </div>
     </main>
