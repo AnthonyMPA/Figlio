@@ -1459,7 +1459,7 @@ nav ul li a:focus {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    text-align: justify;
+    text-align: center;
 }
 
 .glass-content p:last-child {
@@ -1518,7 +1518,7 @@ nav ul li a:focus {
     .glass-content p {
         font-size: 1rem;
         line-height: 1.6;
-        text-align: left;
+        text-align: center;
     }
 }
 
@@ -2974,7 +2974,7 @@ nav ul li a:focus {
 }
 
 .lapizza-photo {
-    width: 300px;
+    width: 350px;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -2997,7 +2997,7 @@ nav ul li a:focus {
 /* Responsive aanpassingen voor La Pizza foto */
 @media (max-width: 768px) {
     .lapizza-photo {
-        width: 250px;
+        width: 280px;
     }
     
     .previous-restaurant-image {
@@ -3009,7 +3009,7 @@ nav ul li a:focus {
 
 @media (max-width: 480px) {
     .lapizza-photo {
-        width: 200px;
+        width: 230px;
     }
 }
   
