@@ -518,10 +518,11 @@ nav ul li a:focus {
 .banner-image {
     margin-left: 10%;
     width: 80%;
-    height: auto;
-    max-height: 400px;
+    height: 400px;
     object-fit: cover;
+    object-position: center 50%;
     border-radius: 50px;
+    display: block;
 }
 
 /* Responsive banner */
@@ -1429,8 +1430,7 @@ nav ul li a:focus {
 }
 
 .glass-history-frame {
-    width: 80%;
-    margin: 2rem auto 4rem;
+    width: 100%;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -1467,6 +1467,21 @@ nav ul li a:focus {
 }
 
 /* Responsive styling for Over Ons page */
+@media (max-width: 1024px) {
+    .over-ons-title {
+        font-size: 4rem;
+        margin: 2rem 0 1.5rem;
+    }
+    
+    .glass-content {
+        padding: 2.5rem;
+    }
+    
+    .glass-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .over-ons-title {
         font-size: 3.5rem;
@@ -1474,8 +1489,6 @@ nav ul li a:focus {
     }
     
     .glass-history-frame {
-        width: 90%;
-        margin: 1.5rem auto 3rem;
         border-radius: 25px;
     }
     
@@ -1501,8 +1514,6 @@ nav ul li a:focus {
     }
     
     .glass-history-frame {
-        width: 95%;
-        margin: 1.2rem auto 2.5rem;
         border-radius: 20px;
     }
     
@@ -1529,8 +1540,6 @@ nav ul li a:focus {
     }
     
     .glass-history-frame {
-        width: 95%;
-        margin: 1rem auto 2rem;
         border-radius: 15px;
     }
     
@@ -2966,22 +2975,58 @@ nav ul li a:focus {
     padding: 0;
 }
 
-/* La Pizza foto styling - Over ons pagina */
-.previous-restaurant-image {
-    text-align: center;
-    margin: 2rem auto;
-    max-width: 600px;
+/* Over ons content layout */
+.over-ons-content-wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.lapizza-photo {
-    width: 350px;
+.glass-history-frame {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Restaurant foto's sidebar - Over ons pagina */
+.restaurant-images-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 0 0 300px;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+    margin-left: -2rem;
+}
+
+.image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.restaurant-images-sidebar .image-wrapper:first-child {
+    margin-top: 2.5rem;
+}
+
+.restaurant-images-sidebar .image-wrapper:last-child {
+    margin-bottom: 4.5rem;
+}
+
+.restaurant-photo {
+    width: 100%;
+    max-width: 250px;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
 }
 
-.lapizza-photo:hover {
+.restaurant-photo:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
@@ -2994,22 +3039,100 @@ nav ul li a:focus {
     opacity: 0.8;
 }
 
-/* Responsive aanpassingen voor La Pizza foto */
-@media (max-width: 768px) {
-    .lapizza-photo {
-        width: 280px;
+/* Responsive aanpassingen voor over ons layout */
+@media (max-width: 1200px) {
+    .restaurant-images-sidebar {
+        flex: 0 0 280px;
+        margin-left: -1.5rem;
     }
     
-    .previous-restaurant-image {
-        margin: 1.5rem auto;
+    .restaurant-photo {
+        max-width: 230px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .over-ons-content-wrapper {
+        gap: 2rem;
+    }
+    
+    .restaurant-images-sidebar {
+        flex: 0 0 250px;
+        margin-left: -1rem;
+    }
+    
+    .restaurant-photo {
+        max-width: 200px;
+    }
+    
+    .restaurant-images-sidebar .image-wrapper:first-child {
+        margin-top: 2rem;
+    }
+    
+    .restaurant-images-sidebar .image-wrapper:last-child {
+        margin-bottom: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .over-ons-content-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 0 1.5rem;
+    }
+    
+    .restaurant-images-sidebar {
+        flex: 1;
+        width: 100%;
         max-width: 100%;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
         padding: 0 1rem;
+    }
+    
+    .restaurant-images-sidebar .image-wrapper:first-child,
+    .restaurant-images-sidebar .image-wrapper:last-child {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .restaurant-photo {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .over-ons-content-wrapper {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+    
+    .restaurant-images-sidebar {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0;
+    }
+    
+    .restaurant-photo {
+        max-width: 250px;
     }
 }
 
 @media (max-width: 480px) {
-    .lapizza-photo {
-        width: 230px;
+    .restaurant-photo {
+        max-width: 220px;
+    }
+    
+    .restaurant-images-sidebar {
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .restaurant-photo {
+        max-width: 190px;
     }
 }
   
