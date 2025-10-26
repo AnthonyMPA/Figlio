@@ -3098,7 +3098,12 @@ nav ul li a:focus {
         margin-bottom: 0;
     }
     
+    .image-wrapper {
+        max-width: 280px;
+    }
+    
     .restaurant-photo {
+        width: 100%;
         max-width: 280px;
     }
 }
@@ -3115,13 +3120,24 @@ nav ul li a:focus {
         padding: 0;
     }
     
+    .image-wrapper {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
     .restaurant-photo {
+        width: 100%;
         max-width: 250px;
     }
 }
 
 @media (max-width: 480px) {
+    .image-wrapper {
+        max-width: 220px;
+    }
+    
     .restaurant-photo {
+        width: 100%;
         max-width: 220px;
     }
     
@@ -3130,9 +3146,36 @@ nav ul li a:focus {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 430px) {
+    .image-wrapper {
+        max-width: 200px;
+    }
+    
     .restaurant-photo {
-        max-width: 190px;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 390px) {
+    .image-wrapper {
+        max-width: 180px;
+    }
+    
+    .restaurant-photo {
+        width: 100%;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 360px) {
+    .image-wrapper {
+        max-width: 170px;
+    }
+    
+    .restaurant-photo {
+        width: 100%;
+        max-width: 170px;
     }
 }
   
