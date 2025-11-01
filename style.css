@@ -656,6 +656,41 @@ nav ul li a:focus {
         max-height: 280px;
         object-position: center 45%;
     }
+    
+    #h1-main {
+        font-size: 2.4rem;
+        margin: 1rem 0;
+    }
+    
+    #p-main {
+        width: 90%;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .preview-title {
+        font-size: 1.95rem;
+        margin: 1.25rem auto 0.85rem auto;
+        max-width: 92%;
+        padding: 0 0.4rem 0.55rem 0.4rem;
+    }
+    
+    .preview-text {
+        font-size: 0.86rem;
+        max-width: 88%;
+        padding: 0 0.4rem;
+        line-height: 1.45;
+    }
+    
+    .pasta-slideshow {
+        width: 93%;
+        height: 200px;
+    }
+    
+    .glass-troeven-container h2 {
+        font-size: 1.95rem;
+        margin-bottom: 1.15rem;
+    }
 }
 
 /* Extra kleine schermen */
@@ -781,7 +816,7 @@ nav ul li a:focus {
 /* Responsive text styling */
 @media (max-width: 768px) {
     #h1-main {
-        font-size: 4.5rem;
+        font-size: 3.5rem;
         margin: 1.5rem 0;
         letter-spacing: 0.05em;
     }
@@ -824,7 +859,7 @@ nav ul li a:focus {
 
 @media (max-width: 600px) {
     #h1-main {
-        font-size: 4.8rem;
+        font-size: 3rem;
         margin: 1.2rem 0;
     }
     
@@ -836,7 +871,7 @@ nav ul li a:focus {
     }
     
     .preview-title {
-        font-size: 3.2rem;
+        font-size: 2.3rem;
         margin: 1.2rem auto 0.7rem auto;
         max-width: 90%;
         padding-bottom: 0.7rem;
@@ -873,7 +908,7 @@ nav ul li a:focus {
 
 @media (max-width: 550px) {
     #h1-main {
-        font-size: 4.6rem;
+        font-size: 2.75rem;
         margin: 1.1rem 0;
         letter-spacing: 0.04em;
     }
@@ -886,7 +921,7 @@ nav ul li a:focus {
     }
     
     .preview-title {
-        font-size: 2.7rem;
+        font-size: 2.2rem;
         margin: 1.15rem auto 0.75rem auto;
         max-width: 90%;
         padding-bottom: 0.65rem;
@@ -916,7 +951,7 @@ nav ul li a:focus {
 
 @media (max-width: 480px) {
     #h1-main {
-        font-size: 4.5rem;
+        font-size: 2.5rem;
         margin: 1rem 0;
         letter-spacing: 0.03em;
     }
@@ -929,7 +964,7 @@ nav ul li a:focus {
     }
     
     .preview-title {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
         margin: 1.2rem 0 0.8rem 0;
         max-width: 90%;
         margin-left: auto;
@@ -956,6 +991,11 @@ nav ul li a:focus {
     #p-main p {
         font-size: 0.95rem;
         line-height: 1.5;
+    }
+    
+    .glass-troeven-container h2 {
+        font-size: 2.1rem;
+        margin-bottom: 1.4rem;
     }
 }
 
@@ -1087,9 +1127,9 @@ nav ul li a:focus {
     }
     
     .menu-card {
-        width: 90%;
-        max-width: 320px;
-        height: 300px;
+        width: 85%;
+        max-width: 280px;
+        height: 260px;
     }
 }
 
@@ -1100,32 +1140,7 @@ nav ul li a:focus {
     }
     
     .menu-card {
-        height: 290px;
-    }
-    
-    .menu-card h2 {
-        font-size: 1.7rem;
-    }
-    
-    .menu-card p {
-        font-size: 0.98rem;
-        margin-bottom: 1.7rem;
-    }
-    
-    .menu-button {
-        font-size: 0.98em;
-        padding: 0.65em 1.7em;
-    }
-}
-
-@media (max-width: 480px) {
-    .menu-cards-container {
-        gap: 20px;
-        margin: 1rem auto;
-    }
-    
-    .menu-card {
-        height: 280px;
+        height: 250px;
     }
     
     .menu-card h2 {
@@ -1140,6 +1155,31 @@ nav ul li a:focus {
     .menu-button {
         font-size: 0.95em;
         padding: 0.6em 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-cards-container {
+        gap: 20px;
+        margin: 1rem auto;
+    }
+    
+    .menu-card {
+        height: 240px;
+    }
+    
+    .menu-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .menu-card p {
+        font-size: 0.9rem;
+        margin-bottom: 1.3rem;
+    }
+    
+    .menu-button {
+        font-size: 0.9em;
+        padding: 0.55em 1.5em;
     }
 }
 
@@ -1389,6 +1429,89 @@ nav ul li a:focus {
     }
 }
 
+/* iPad specifieke footer stijlen */
+@media only screen and (min-width: 820px) and (max-width: 1366px) {
+    .site-footer {
+        padding: 3.5rem 0 1.5rem;
+        margin-top: 3.5rem;
+    }
+    
+    .footer-container {
+        padding: 0 2.5rem;
+    }
+    
+    .footer-logo-section {
+        padding: 2.5rem 2rem 1.5rem;
+    }
+    
+    .footer-main-logo {
+        width: 200px;
+        height: auto;
+    }
+    
+    .footer-content {
+        padding: 2.5rem 2rem;
+    }
+    
+    .footer-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1.25rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .address {
+        font-size: 1.05rem;
+    }
+    
+    .contact-info {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .contact-link {
+        font-size: 1rem;
+    }
+    
+    .btw-number {
+        font-size: 1rem;
+    }
+    
+    .hours-item {
+        font-size: 1rem;
+        padding: 0.3rem 0;
+    }
+    
+    .hours-note {
+        font-size: 0.95rem;
+    }
+    
+    .social-link {
+        padding: 1rem 1.4rem;
+        border-radius: 14px;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .social-text {
+        font-size: 1rem;
+    }
+    
+    .footer-bottom {
+        padding: 1.2rem 2rem;
+    }
+    
+    .footer-bottom-content {
+        font-size: 0.95rem;
+    }
+}
+
 @media (max-width: 640px) {
     .footer-logo-section {
         padding: 1.5rem 1rem 1rem;
@@ -1613,6 +1736,45 @@ nav ul li a:focus {
 }
 
 /* Specifieke styling voor 390x844 formaat */
+/* Specifieke styling voor iPhone 14 Pro Max (430 x 932) - Index pagina */
+@media (max-width: 430px) and (min-height: 850px) {
+    #h1-main {
+        font-size: 2.6rem;
+        margin: 1.1rem 0;
+    }
+    
+    #p-main {
+        width: 88%;
+        padding: 1.1rem;
+        font-size: 1rem;
+    }
+    
+    .preview-title {
+        font-size: 2.15rem;
+        margin: 1.4rem auto 0.95rem auto;
+        max-width: 90%;
+        padding: 0 0.5rem 0.65rem 0.5rem;
+        letter-spacing: 0.01em;
+    }
+    
+    .preview-text {
+        font-size: 0.92rem;
+        max-width: 88%;
+        padding: 0 0.5rem;
+        line-height: 1.5;
+    }
+    
+    .pasta-slideshow {
+        width: 92%;
+        height: 215px;
+    }
+    
+    .glass-troeven-container h2 {
+        font-size: 2.15rem;
+        margin-bottom: 1.4rem;
+    }
+}
+
 @media (max-width: 430px) {
     .hours-schedule .hours-item {
         display: flex;
@@ -1639,7 +1801,7 @@ nav ul li a:focus {
     
     /* Verbeterde preview-title styling voor kleine apparaten */
     .preview-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin: 1.3rem auto 0.9rem auto;
         max-width: 92%;
         padding: 0 0.5rem 0.6rem 0.5rem;
@@ -1647,8 +1809,14 @@ nav ul li a:focus {
     }
     
     .preview-text {
+        font-size: 0.88rem;
         max-width: 85%;
         padding: 0 0.5rem;
+    }
+    
+    .glass-troeven-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1.3rem;
     }
 }
 
@@ -1937,6 +2105,19 @@ nav ul li a:focus {
     justify-content: center;
 }
 
+/* iPad specifieke h2 styling */
+@media only screen and (min-width: 820px) and (max-width: 1366px) {
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .glass-contact-container h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.8rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        min-height: 4rem;
+    }
+}
+
 /* Responsive h2 styling voor alle secties */
 @media (max-width: 768px) {
     .glass-map-container h2,
@@ -2092,6 +2273,29 @@ nav ul li a:focus {
     overflow: hidden;
 }
 
+/* iPad optimalisatie voor route button */
+@media only screen and (min-width: 820px) and (max-width: 1366px) {
+    .route-button {
+        padding: 1rem 2.2rem;
+        font-size: 1.05rem;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+    }
+    
+    .route-button:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 10px rgba(169, 99, 59, 0.3);
+    }
+    
+    .route-text {
+        font-size: 1.05rem;
+    }
+    
+    .route-arrow {
+        font-size: 1.2rem;
+    }
+}
+
 /* Glanzend effect weggehaald */
 
 /* Alle hover effecten weggehaald */
@@ -2136,14 +2340,36 @@ nav ul li a:focus {
     display: block;
 }
 
+/* iPad specifieke kaart optimalisaties */
+@media only screen and (min-width: 820px) and (max-width: 1366px) {
+    .map-wrapper {
+        border-radius: 25px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+    
+    .map-wrapper:hover {
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .map-wrapper iframe {
+        filter: brightness(0.85) saturate(0.9) contrast(1.05);
+        transition: filter 0.3s ease;
+    }
+    
+    .map-wrapper:hover iframe {
+        filter: brightness(0.95) saturate(1) contrast(1);
+    }
+}
+
 /* Hover effect van iframe weggehaald */
 
 /* Openingstijden container */
 .glass-openingstijden-container {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 2.5rem;
@@ -2412,6 +2638,49 @@ nav ul li a:focus {
     border-bottom: none;
 }
 
+/* iPad specifieke aanpassingen voor contactgegevens */
+@media only screen and (min-width: 820px) and (max-width: 1366px) {
+    .contact-grid {
+        gap: 2.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .contact-item-main {
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+    
+    .contact-item-main:active {
+        transform: scale(0.98);
+        background: rgba(255, 255, 255, 0.08);
+    }
+    
+    .contact-details-main h3 {
+        font-size: 1.15rem;
+    }
+    
+    .contact-details-main p {
+        font-size: 1.05rem;
+    }
+    
+    .dag-rij {
+        transition: background 0.2s ease;
+    }
+    
+    .dag-rij:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .dag {
+        font-size: 1.15rem;
+    }
+    
+    .tijd {
+        font-size: 1.05rem;
+    }
+}
+
 /* Responsive aanpassingen voor contactgegevens */
 @media (max-width: 768px) {
     .glass-contact-container {
@@ -2448,7 +2717,225 @@ nav ul li a:focus {
     }
 }
 
-/* Responsive styling voor contact pagina */
+/* iPad Pro 12.9" - Landscape (1366x1024) */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .contact-title {
+        font-size: 4rem;
+        margin: 2rem 0 2rem;
+    }
+    
+    .glass-main-container {
+        padding: 2.5rem;
+        width: 85%;
+        max-width: 1200px;
+    }
+    
+    .map-openingstijden-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        padding: 2rem;
+        min-height: 450px;
+    }
+    
+    .map-wrapper iframe {
+        height: 350px;
+    }
+    
+    .status-text {
+        font-size: 1rem;
+    }
+    
+    .contact-item-main {
+        padding: 1rem 1.8rem;
+        width: 80%;
+    }
+}
+
+/* iPad Pro 12.9" - Portrait (1024x1366) */
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
+    .contact-title {
+        font-size: 4.2rem;
+        margin: 2.5rem 0 2rem;
+    }
+    
+    .glass-main-container {
+        padding: 3rem;
+        width: 90%;
+        max-width: 900px;
+    }
+    
+    .map-openingstijden-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        padding: 2.5rem;
+        min-height: 500px;
+    }
+    
+    .map-wrapper iframe {
+        height: 400px;
+    }
+    
+    .contact-item-main {
+        padding: 1.2rem 2rem;
+        width: 85%;
+    }
+}
+
+/* iPad Pro 11" & iPad Air - Landscape (1180x820 / 1194x834) */
+@media only screen and (min-width: 820px) and (max-width: 1194px) and (orientation: landscape) {
+    .contact-title {
+        font-size: 3.8rem;
+        margin: 1.8rem 0 1.8rem;
+    }
+    
+    .glass-main-container {
+        padding: 2rem;
+        width: 88%;
+        max-width: 1100px;
+    }
+    
+    .map-openingstijden-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.8rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        padding: 1.8rem;
+        min-height: 420px;
+    }
+    
+    .map-wrapper iframe {
+        height: 320px;
+    }
+    
+    .contact-item-main {
+        padding: 1rem 1.5rem;
+        width: 82%;
+        gap: 1.3rem;
+    }
+    
+    .contact-icon-main {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contact-icon-img {
+        width: 36px;
+    }
+    
+    .status-indicator {
+        padding: 1rem 1.5rem;
+    }
+    
+    .dag-rij {
+        padding: 0.7rem 0;
+    }
+}
+
+/* iPad Pro 11" & iPad Air - Portrait (820x1180 / 834x1194) */
+@media only screen and (min-width: 820px) and (max-width: 834px) and (orientation: portrait) {
+    .contact-title {
+        font-size: 4rem;
+        margin: 2.2rem 0 1.8rem;
+    }
+    
+    .glass-main-container {
+        padding: 2.5rem;
+        width: 92%;
+        max-width: 760px;
+    }
+    
+    .map-openingstijden-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        padding: 2.2rem;
+        min-height: 480px;
+    }
+    
+    .map-wrapper iframe {
+        height: 380px;
+    }
+    
+    .contact-item-main {
+        padding: 1.1rem 1.8rem;
+        width: 85%;
+        max-width: 500px;
+    }
+    
+    .contact-grid {
+        gap: 2rem;
+        padding-top: 1.2rem;
+    }
+    
+    .status-text {
+        font-size: 1.05rem;
+    }
+    
+    .keuken-info {
+        font-size: 1.05rem;
+    }
+}
+
+/* Algemene tablet optimalisaties */
+@media only screen and (min-width: 768px) and (max-width: 1366px) {
+    /* Verbeterde hover effecten voor touch devices */
+    .contact-item-main:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .route-button:active {
+        transform: scale(0.98);
+    }
+    
+    /* Optimaliseer RestManager widget voor tablets */
+    .restomanager-container {
+        width: 480px;
+        height: 640px;
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .restomanager-toggle {
+        width: 180px;
+        height: 55px;
+        left: 65%;
+        font-size: 28px;
+    }
+    
+    /* Betere touch targets */
+    .contact-details-main a {
+        padding: 0.3rem 0;
+    }
+    
+    /* Optimaliseer glassmorphism voor betere prestaties */
+    .glass-main-container,
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+}
+
+/* Responsive styling voor kleinere schermen */
 @media (max-width: 768px) {
     .contact-title {
         font-size: 3.5rem;
@@ -2735,6 +3222,11 @@ nav ul li a:focus {
         padding: 1.35rem;
         border-radius: 18px;
         min-height: 450px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
     
     .location-info {
@@ -2810,6 +3302,11 @@ nav ul li a:focus {
         padding: 1.2rem;
         border-radius: 15px;
         min-height: 420px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
     
     .map-wrapper {
@@ -2899,10 +3396,318 @@ nav ul li a:focus {
     }
 }
 
-@media (max-width: 430px) {
+/* Specifieke styling voor iPhone 14 Pro Max en vergelijkbare grote iPhones (430 x 932) */
+@media (max-width: 430px) and (min-height: 850px) {
+    .contact-title {
+        font-size: 2.4rem;
+        margin: 1.2rem 0 1rem;
+    }
+    
     .glass-main-container {
         width: 92%;
+        padding: 1.2rem;
+        border-radius: 20px;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        padding: 1.5rem;
+        border-radius: 18px;
+        min-height: 440px;
+    }
+    
+    .glass-contact-container {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .glass-contact-container h2 {
+        font-size: 2.3rem;
+        margin-bottom: 1.4rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        min-height: 3.2rem;
+    }
+    
+    .contact-grid {
+        gap: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .contact-item-main {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.1rem 1.4rem;
+        gap: 1.3rem;
+    }
+    
+    .contact-icon-main {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .contact-icon-img {
+        width: 38px;
+    }
+    
+    .contact-details-main h3 {
+        font-size: 1rem;
+    }
+    
+    .contact-details-main p {
+        font-size: 0.92rem;
+    }
+    
+    .dag-rij {
+        padding: 0.6rem 0;
+    }
+    
+    .dag {
+        font-size: 1rem;
+    }
+    
+    .tijd {
+        font-size: 0.9rem;
+    }
+    
+    .status-indicator {
+        padding: 0.8rem 1.2rem;
+        margin-bottom: 1.4rem;
+    }
+    
+    .status-dot {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .status-text {
+        font-size: 1rem;
+    }
+    
+    .keuken-info {
+        padding: 0.8rem 1.2rem;
+        margin-top: 1.2rem;
+        font-size: 0.95rem;
+    }
+    
+    .location-info {
+        padding: 0.8rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .address-details h3 {
+        font-size: 1rem;
+    }
+    
+    .route-button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+    
+    .route-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .map-wrapper {
+        min-height: 240px;
+    }
+    
+    .openingstijden-list {
+        padding: 0.3rem 0;
+    }
+}
+
+/* Specifieke styling voor 390 x 844 en vergelijkbare formaten */
+@media (max-width: 430px) {
+    .contact-title {
+        font-size: 2.3rem;
+        margin: 1rem 0 0.9rem;
+    }
+    
+    .glass-main-container {
+        width: 94%;
+        padding: 1rem;
+        border-radius: 18px;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        padding: 1.2rem;
+        border-radius: 15px;
+        min-height: 400px;
+    }
+    
+    .glass-contact-container {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .glass-contact-container h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        min-height: 3rem;
+    }
+    
+    .contact-grid {
+        gap: 1.8rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    .contact-item-main {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 1.2rem;
+        gap: 1.2rem;
+    }
+    
+    .contact-icon-main {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .contact-icon-img {
+        width: 36px;
+    }
+    
+    .contact-details-main h3 {
+        font-size: 0.95rem;
+    }
+    
+    .contact-details-main p {
+        font-size: 0.88rem;
+    }
+    
+    .dag-rij {
+        padding: 0.55rem 0;
+    }
+    
+    .dag {
+        font-size: 0.95rem;
+    }
+    
+    .tijd {
+        font-size: 0.85rem;
+    }
+    
+    .status-indicator {
+        padding: 0.7rem 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .status-dot {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .status-text {
+        font-size: 0.95rem;
+    }
+    
+    .keuken-info {
+        padding: 0.7rem 1rem;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .location-info {
+        padding: 0.7rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .address-details h3 {
+        font-size: 0.95rem;
+    }
+    
+    .route-button {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .route-icon {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+    
+    .map-wrapper {
+        min-height: 220px;
+    }
+}
+
+/* Extra styling voor 390px schermen */
+@media (max-width: 390px) {
+    .contact-title {
+        font-size: 2.2rem;
+        margin: 0.9rem 0 0.8rem;
+    }
+    
+    .glass-main-container {
+        width: 96%;
         padding: 0.9rem;
+    }
+    
+    .glass-map-container,
+    .glass-openingstijden-container,
+    .glass-contact-container {
+        padding: 1rem;
+        min-height: 380px;
+    }
+    
+    .glass-contact-container {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .glass-map-container h2,
+    .glass-openingstijden-container h2,
+    .glass-contact-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-grid {
+        gap: 1.6rem;
+    }
+    
+    .contact-item-main {
+        padding: 0.9rem 1rem;
+        gap: 1rem;
+    }
+    
+    .contact-icon-main {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contact-icon-img {
+        width: 34px;
+    }
+    
+    .contact-details-main h3 {
+        font-size: 0.9rem;
+    }
+    
+    .contact-details-main p {
+        font-size: 0.85rem;
     }
 }
 
@@ -2911,7 +3716,6 @@ nav ul li a:focus {
     .glass-map-container,
     .glass-openingstijden-container,
     .glass-contact-container {
-        min-height: 380px;
         display: flex;
         flex-direction: column;
     }
@@ -2923,12 +3727,11 @@ nav ul li a:focus {
     .contact-grid {
         flex: 1;
         justify-content: space-between;
-        gap: 1.5rem;
     }
     
     .contact-item-main {
         flex: 1;
-        min-height: 80px;
+        min-height: 75px;
         display: flex;
         align-items: center;
         background: transparent;
