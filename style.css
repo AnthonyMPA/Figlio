@@ -1911,7 +1911,7 @@ nav ul li a:focus {
 
 .glass-content p {
     font-family: "Bodoni 72", "Bodoni MT", Bodoni, Arial, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -2035,6 +2035,21 @@ nav ul li a:focus {
     .glass-content p {
         font-size: 0.95rem;
         line-height: 1.5;
+    }
+}
+
+/* Specifieke styling voor iPhone Max modellen en vergelijkbare grote schermen */
+@media (min-width: 431px) and (max-width: 550px) and (min-height: 850px) {
+    .glass-content p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 430px) and (min-height: 850px) {
+    .glass-content p {
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
 }
   
