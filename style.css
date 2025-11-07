@@ -788,6 +788,14 @@ nav ul li a:focus {
     border-radius: 20px;
 }
 
+.left-slideshow {
+    box-shadow: 0 0 30px rgba(101, 100, 52, 0.6), 0 0 50px rgba(101, 100, 52, 0.4);
+}
+
+.right-slideshow {
+    box-shadow: 0 0 30px rgba(169, 99, 59, 0.6), 0 0 50px rgba(169, 99, 59, 0.4);
+}
+
 .pasta-image {
     position: absolute;
     top: 0;
@@ -798,6 +806,7 @@ nav ul li a:focus {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     border-radius: 20px;
+    transform: scale(1.35);
 }
 
 .pasta-image.active {
