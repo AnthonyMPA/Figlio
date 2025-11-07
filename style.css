@@ -719,6 +719,66 @@ nav ul li a:focus {
     margin: 2rem 0;
     color: #656434;
     letter-spacing: 0.1em;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.menu-title {
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 4.5rem;
+    text-align: center;
+    margin: 2.5rem 0 2rem;
+    color: #656434;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .menu-title {
+        font-size: 3.5rem;
+        margin: 2rem 0 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-title {
+        font-size: 3rem;
+        margin: 1.5rem 0 1.2rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .menu-title {
+        font-size: 2.75rem;
+        margin: 1.35rem 0 1.15rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-title {
+        font-size: 2.5rem;
+        margin: 1.2rem 0 1rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .menu-title {
+        font-size: 2.3rem;
+        margin: 1rem 0 0.9rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .menu-title {
+        font-size: 2.2rem;
+        margin: 0.9rem 0 0.8rem;
+    }
 }
 
 .preview-title {
@@ -1047,7 +1107,9 @@ nav ul li a:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.15);
+    background-image: url('images/Figlio Background Green.png');
+    background-size: cover;
+    background-position: center;
     backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
@@ -1059,7 +1121,17 @@ nav ul li a:focus {
 }
 
 .menu-card:hover .menu-card-glass {
-    background: rgba(255, 255, 255, 0.25);
+    background-image: url('images/Figlio Background Green.png');
+    opacity: 0.95;
+}
+
+.menu-card:nth-child(2) .menu-card-glass {
+    background-image: url('images/Figlio Background Terracotta.png');
+}
+
+.menu-card:nth-child(2):hover .menu-card-glass {
+    background-image: url('images/Figlio Background Terracotta.png');
+    opacity: 0.95;
 }
 
 .menu-card h2 {
@@ -1101,6 +1173,15 @@ nav ul li a:focus {
     box-shadow: 0 6px 20px rgba(169, 99, 59, 0.8);
     transform: translateY(-3px);
     border: none;
+}
+
+.menu-card:nth-child(1) .menu-button {
+    background: rgba(169, 99, 59, 0.9);
+}
+
+.menu-card:nth-child(1) .menu-button:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #A9633B;
 }
 
 /* Responsive Menu Cards */
@@ -1891,6 +1972,15 @@ nav ul li a:focus {
     margin: 2.5rem 0 2rem;
     color: #656434;
     letter-spacing: 0.1em;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .glass-history-frame {
@@ -4310,7 +4400,7 @@ nav ul li a:focus {
     gap: 3rem;
     align-items: stretch;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 3rem auto 0 auto;
     padding: 0 2rem;
 }
 
@@ -4338,11 +4428,11 @@ nav ul li a:focus {
 }
 
 .restaurant-images-sidebar .image-wrapper:first-child {
-    margin-top: 2.5rem;
+    margin-top: 0.4rem;
 }
 
 .restaurant-images-sidebar .image-wrapper:last-child {
-    margin-bottom: 4.5rem;
+    margin-bottom: 0;
 }
 
 .restaurant-photo {
@@ -4395,11 +4485,11 @@ nav ul li a:focus {
     }
     
     .restaurant-images-sidebar .image-wrapper:first-child {
-        margin-top: 2rem;
+        margin-top: 0.4rem;
     }
     
     .restaurant-images-sidebar .image-wrapper:last-child {
-        margin-bottom: 3.5rem;
+        margin-bottom: 0;
     }
 }
 
