@@ -21,6 +21,7 @@ h1 {
 
 main {
     flex: 1 0 auto;
+    padding-top: 90px;
 }
 
 header {
@@ -28,11 +29,29 @@ header {
     justify-content: center;
     align-items: center;
     padding: 0.5rem 2rem;
-    background-color: #e5e0d2;
-    position: relative;
-    max-width: 1200px;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-width: 100%;
     margin: 0 auto;
     width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+header > nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header.nav-hidden {
+    transform: translateY(-100%);
+}
+
+header.nav-visible {
+    transform: translateY(0);
 }
 
 nav {
@@ -264,14 +283,12 @@ nav ul li a:focus {
 .contact-link {
     color: #E9E2D2;
     text-decoration: none;
-    border-bottom: 1px dotted rgba(233, 226, 210, 0.35);
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition: color 0.2s ease;
     font-weight: 500;
 }
 
 .contact-link:hover {
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.55);
 }
 
 .btw-number {
@@ -378,6 +395,9 @@ nav ul li a:focus {
     #logo-nav img {
         height: 56px;
     }
+    main {
+        padding-top: 85px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -392,6 +412,10 @@ nav ul li a:focus {
         width: 100%;
         justify-content: space-between;
         gap: 2rem;
+    }
+    
+    main {
+        padding-top: 80px;
     }
     
     .hamburger {
@@ -464,6 +488,10 @@ nav ul li a:focus {
         gap: 1.8rem;
     }
     
+    main {
+        padding-top: 75px;
+    }
+    
     nav ul {
         padding: 0.8rem;
         border-radius: 12px;
@@ -490,6 +518,10 @@ nav ul li a:focus {
         gap: 1.65rem;
     }
     
+    main {
+        padding-top: 73px;
+    }
+    
     nav ul {
         padding: 0.7rem;
         border-radius: 11px;
@@ -512,6 +544,10 @@ nav ul li a:focus {
         width: 100%;
         justify-content: space-between;
         gap: 1.5rem;
+    }
+    
+    main {
+        padding-top: 70px;
     }
     
     nav ul {
@@ -836,20 +872,20 @@ nav ul li a:focus {
     display: flex;
     justify-content: center;
     gap: 30px;
-    max-width: 80%;
+    max-width: 90%;
     margin: 2rem auto 4rem auto;
 }
 
 .pasta-slideshow {
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     position: relative;
     overflow: hidden;
     border-radius: 20px;
 }
 
 .left-slideshow {
-    box-shadow: 0 0 30px rgba(101, 100, 52, 0.6), 0 0 50px rgba(101, 100, 52, 0.4);
+    box-shadow: 0 0 30px rgba(169, 99, 59, 0.6), 0 0 50px rgba(169, 99, 59, 0.4);
 }
 
 .right-slideshow {
@@ -866,7 +902,6 @@ nav ul li a:focus {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     border-radius: 20px;
-    transform: scale(1.35);
 }
 
 .pasta-image.active {
@@ -916,8 +951,8 @@ nav ul li a:focus {
     }
     
     .pasta-slideshow {
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
     }
     
     #p-main p {
@@ -961,7 +996,7 @@ nav ul li a:focus {
     
     .pasta-slideshow {
         width: 90%;
-        height: 220px;
+        height: 280px;
         border-radius: 15px;
     }
     
@@ -1004,7 +1039,7 @@ nav ul li a:focus {
     
     .pasta-slideshow {
         width: 93%;
-        height: 210px;
+        height: 260px;
         border-radius: 13px;
     }
     
@@ -1049,7 +1084,7 @@ nav ul li a:focus {
     
     .pasta-slideshow {
         width: 95%;
-        height: 200px;
+        height: 240px;
         border-radius: 10px;
     }
     
@@ -1639,15 +1674,25 @@ nav ul li a:focus {
     .contact-info {
         justify-content: center;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 0.2rem;
         text-align: center;
-        white-space: nowrap;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .contact-label {
         min-width: auto;
-        width: 60px;
-        text-align: left;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+
+    .contact-link,
+    .btw-number {
+        text-align: center;
+        display: block;
+        width: 100%;
     }
 
     .hours-item {
@@ -1709,14 +1754,24 @@ nav ul li a:focus {
 
     .contact-info {
         margin-bottom: 0.7rem;
+        align-items: center;
+    }
+
+    .contact-label {
+        text-align: center;
+        width: 100%;
     }
 
     .contact-link {
         font-size: 0.93rem;
+        text-align: center;
+        width: 100%;
     }
 
     .btw-number {
         font-size: 0.93rem;
+        text-align: center;
+        width: 100%;
     }
 
     .hours-item {
@@ -1785,15 +1840,24 @@ nav ul li a:focus {
 
     .contact-info {
         margin-bottom: 0.6rem;
-        white-space: nowrap;
+        align-items: center;
+    }
+
+    .contact-label {
+        text-align: center;
+        width: 100%;
     }
 
     .contact-link {
         font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
     }
 
     .btw-number {
         font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
     }
 
     .hours-item {
