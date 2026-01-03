@@ -388,42 +388,6 @@
             }
         }
 
-        /* Uitzonderlijke sluitingsdagen notitie bij openingstijden */
-        .special-closure-note {
-            margin-bottom: 16px;
-            padding: 10px 14px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(169, 99, 59, 0.12), rgba(169, 99, 59, 0.04));
-            border: 1px solid rgba(169, 99, 59, 0.35);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: #3b3026;
-        }
-
-        .special-closure-note-badge {
-            background-color: #A9633B;
-            color: #F6EFE3;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        .special-closure-note-text {
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        @media (max-width: 480px) {
-            .special-closure-note {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
     </style>
 </head>
 <body>
@@ -501,12 +465,6 @@
                                 <span class="status-text" id="status-text">Berekenen...</span>
                             </div>
                             <div class="openingstijden-list">
-                                <div class="special-closure-note">
-                                    <span class="special-closure-note-badge">Feestdagen</span>
-                                    <span class="special-closure-note-text">
-                                        Uitzonderlijk gesloten op 24/12, 25/12, 26/12, 31/12, 1/1 en 2/1.
-                                    </span>
-                                </div>
                                 <div class="dag-rij">
                                     <span class="dag">Maandag</span>
                                     <span class="tijd gesloten">Gesloten</span>
@@ -649,28 +607,12 @@
             const currentHour = now.getHours();
             const currentMinute = now.getMinutes();
             const currentTime = currentHour * 60 + currentMinute;
-            const todayString = now.toISOString().split('T')[0]; // yyyy-mm-dd
-            
-            // Uitzonderlijke sluitingsdagen waarop we ook "VANDAAG GESLOTEN" tonen
-            const specialeSluitingsdagen = [
-                '2025-12-24',
-                '2025-12-25',
-                '2025-12-26',
-                '2025-12-31',
-                '2026-01-01',
-                '2026-01-02'
-            ];
             
             let isOpen = false;
             let statusText = '';
             
-            // Eerst: speciale sluitingsdagen
-            if (specialeSluitingsdagen.includes(todayString)) {
-                isOpen = false;
-                statusText = 'VANDAAG GESLOTEN';
-            }
             // Maandag (1) en Dinsdag (2) zijn gesloten
-            else if (currentDay === 1 || currentDay === 2) {
+            if (currentDay === 1 || currentDay === 2) {
                 isOpen = false;
                 statusText = 'VANDAAG GESLOTEN';
             } else {
