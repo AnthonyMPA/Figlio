@@ -1141,12 +1141,21 @@ Gelieve bij het maken van jullie reservatie aan te geven waarvoor jullie kiezen,
             const navigation = performance.getEntriesByType('navigation')[0];
             const navType = navigation ? navigation.type : 'navigate';
             
-            // Check of dit een refresh is (reload) of eerste bezoek (navigate zonder referrer)
+            // Toon pop-up bij refresh of wanneer bezoek van buiten de eigen site komt (bv. Google)
             const isRefresh = navType === 'reload';
-            const isFirstVisit = navType === 'navigate' && !document.referrer;
+            const currentHost = window.location.hostname.replace(/^www\./, '');
+            let isInternalReferrer = false;
             
-            // Toon pop-up alleen bij refresh of eerste bezoek
-            if (isRefresh || isFirstVisit) {
+            if (document.referrer) {
+                try {
+                    const referrerHost = new URL(document.referrer).hostname.replace(/^www\./, '');
+                    isInternalReferrer = referrerHost === currentHost;
+                } catch (error) {
+                    isInternalReferrer = false;
+                }
+            }
+            
+            if (isRefresh || !isInternalReferrer) {
                 setTimeout(function() {
                     valentijnsPopup.classList.add('show');
                     document.body.style.overflow = 'hidden'; // Voorkom scrollen
