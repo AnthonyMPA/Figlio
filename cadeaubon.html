@@ -44,6 +44,19 @@
             height: 100%;
             border: none;
         }
+
+        @media (min-width: 769px) {
+            .restomanager-container-voucher {
+                height: 580px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .restomanager-container-voucher {
+                height: 610px;
+            }
+        }
+
         
         .restomanager-container {
             position: fixed;
@@ -332,6 +345,34 @@
                 border-radius: 15px 15px 0 0;
             }
         }
+
+        @media (max-width: 768px) {
+            .restomanager-container:not(.collapsed) {
+                width: calc(100vw - 16px);
+                height: min(calc(100vh - 16px), 640px);
+                height: min(calc(100dvh - 16px), 640px);
+                right: 8px;
+                bottom: max(8px, env(safe-area-inset-bottom));
+                border-radius: 18px;
+                overflow: hidden;
+            }
+
+            .restomanager-container:not(.collapsed) .restomanager-iframe {
+                border-radius: 18px;
+            }
+
+            .restomanager-container:not(.collapsed) .close-button {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .restomanager-container:not(.collapsed) {
+                height: min(calc(100vh - 16px), 600px);
+                height: min(calc(100dvh - 16px), 600px);
+            }
+        }
         
         /* Cadeaubon Voorwaarden Styling */
         .voucher-terms-section {
@@ -339,12 +380,32 @@
             padding: 10px 20px 20px 20px;
             margin-top: 0;
         }
+
+        @media (min-width: 769px) {
+            .voucher-terms-section {
+                margin-top: 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .voucher-terms-section {
+                margin-top: 0;
+            }
+        }
         
         .voucher-terms-container {
             max-width: 800px;
             margin: 0 auto;
-            background: transparent;
-            padding: 20px 0;
+            background: rgba(233, 226, 210, 0.38);
+            padding: 28px 34px;
+            border: 2px solid #A9633B;
+            border-radius: 18px;
+            box-shadow: 0 14px 34px rgba(169, 99, 59, 0.14);
+            transition: box-shadow 0.25s ease;
+        }
+
+        .voucher-terms-container:hover {
+            box-shadow: 0 16px 38px rgba(169, 99, 59, 0.2);
         }
         
         .voucher-terms-title {
@@ -418,7 +479,8 @@
             }
             
             .voucher-terms-container {
-                padding: 15px 0;
+                padding: 24px 24px;
+                border-radius: 16px;
             }
             
             .voucher-terms-title {
@@ -460,7 +522,8 @@
             }
             
             .voucher-terms-container {
-                padding: 10px 0;
+                padding: 22px 16px;
+                border-radius: 14px;
             }
             
             .voucher-terms-title {
@@ -534,7 +597,7 @@
     <main>
      <div class="main-container">
         <div class="restomanager-container-voucher">
-            <iframe title="RestoManager Voucher" src="https://book.restomanager.net/vouchers/68a2e0c092408ce09956de44" frameborder="0" class="restomanager-iframe-voucher"></iframe>
+            <iframe title="RestoManager Voucher" src="https://book.restomanager.net/vouchers/68a2e0c092408ce09956de44" frameborder="0" scrolling="yes" class="restomanager-iframe-voucher"></iframe>
         </div>
         
         <!-- Cadeaubon Voorwaarden Sectie -->

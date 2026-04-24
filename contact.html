@@ -388,6 +388,34 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .restomanager-container:not(.collapsed) {
+                width: calc(100vw - 16px);
+                height: min(calc(100vh - 16px), 640px);
+                height: min(calc(100dvh - 16px), 640px);
+                right: 8px;
+                bottom: max(8px, env(safe-area-inset-bottom));
+                border-radius: 18px;
+                overflow: hidden;
+            }
+
+            .restomanager-container:not(.collapsed) .restomanager-iframe {
+                border-radius: 18px;
+            }
+
+            .restomanager-container:not(.collapsed) .close-button {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .restomanager-container:not(.collapsed) {
+                height: min(calc(100vh - 16px), 600px);
+                height: min(calc(100dvh - 16px), 600px);
+            }
+        }
+
     </style>
     <style>
     </style>
