@@ -1,4 +1,6 @@
 (() => {
+  const noticeExpiresAt = Date.parse("2026-08-17T00:00:00+02:00");
+
   function getNavigationType() {
     try {
       const entry = performance.getEntriesByType?.("navigation")?.[0];
@@ -17,6 +19,8 @@
   }
 
   function shouldShowNotice() {
+    if (Date.now() >= noticeExpiresAt) return false;
+
     const navigationType = getNavigationType();
     if (navigationType === "reload") return true;
     return !isSameOriginReferrer();
