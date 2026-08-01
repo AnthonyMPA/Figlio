@@ -13,6 +13,113 @@ body {
     font-family: 'Poppins', Verdana, Geneva, sans-serif;
 }
 
+/* Vakantiemelding op alle publieke pagina's */
+.notice-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.notice-modal.is-open {
+    display: flex;
+}
+
+.notice-dialog {
+    position: relative;
+    width: min(560px, 92vw);
+    border: 1px solid rgba(169, 99, 59, 0.35);
+    border-radius: 24px;
+    padding: 28px 26px;
+    background: #E9E2D2;
+    color: #656434;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    text-align: center;
+}
+
+.notice-title {
+    margin-bottom: 10px;
+    color: #656434;
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.55rem;
+    letter-spacing: 0.06em;
+}
+
+.notice-body {
+    color: #656434;
+    font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.notice-body p + p {
+    margin-top: 10px;
+}
+
+.notice-flag {
+    display: inline-block;
+    margin-left: 6px;
+    transform: translateY(1px);
+}
+
+.notice-signoff {
+    margin-top: 14px;
+    color: #A9633B;
+    font-family: "Bodoni 72", "Bodoni MT", Bodoni, Arial, sans-serif;
+    font-size: 1.2rem;
+}
+
+.notice-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #111;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.notice-close:hover {
+    background: #fff;
+    transform: scale(1.04);
+}
+
+.notice-close:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+    .notice-dialog {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+
+    .notice-title {
+        font-size: 2.15rem;
+    }
+
+    .notice-body {
+        font-size: 0.98rem;
+    }
+}
+
 h1 {
     text-align: center;
     margin-top: 1em;
