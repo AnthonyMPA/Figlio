@@ -42,12 +42,13 @@
 
     const title = typeof value.title === "string" ? value.title.trim() : "";
     const text = typeof value.text === "string" ? value.text.trim() : "";
+    const showItalianFlag = value.showItalianFlag !== false;
     const startDate = typeof value.startDate === "string" ? value.startDate : "";
     const endDate = typeof value.endDate === "string" ? value.endDate : "";
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
 
     if (!title || !datePattern.test(startDate) || !datePattern.test(endDate)) return null;
-    return { title, text, startDate, endDate };
+    return { title, text, showItalianFlag, startDate, endDate };
   }
 
   function isCurrent(notice) {
@@ -117,7 +118,7 @@
     const secondary = modal.querySelector(".notice-secondary");
 
     primary.textContent = notice.title;
-    if (!notice.title.includes("🇮🇹")) {
+    if (notice.showItalianFlag && !notice.title.includes("🇮🇹")) {
       const flag = document.createElement("span");
       flag.className = "notice-flag";
       flag.setAttribute("aria-label", "Italiaanse vlag");
