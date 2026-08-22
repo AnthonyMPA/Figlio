@@ -13,6 +13,171 @@ body {
     font-family: 'Poppins', Verdana, Geneva, sans-serif;
 }
 
+/* Cookie-/privacybanner */
+.cookie-consent {
+    position: fixed;
+    z-index: 30000;
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+    display: none;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.cookie-consent.is-open {
+    display: flex;
+    pointer-events: auto;
+}
+
+.cookie-consent-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 26px;
+    align-items: center;
+    width: min(900px, 100%);
+    padding: 23px 25px;
+    color: #656434;
+    background: rgba(233, 226, 210, 0.97);
+    border: 1px solid rgba(169, 99, 59, 0.5);
+    border-radius: 25px;
+    box-shadow: 0 18px 50px rgba(77, 61, 36, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    animation: cookieBannerIn 0.35s ease-out;
+}
+
+.cookie-consent-eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: #A9633B;
+    font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.cookie-consent h2 {
+    margin: 0 0 7px;
+    color: #656434;
+    /* Exact dezelfde kopstijl als “Waarom kiezen voor Figlio”. */
+    font-family: 'Chatara Regular', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.cookie-consent p {
+    max-width: 560px;
+    margin: 0;
+    font-size: 0.94rem;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.cookie-consent-actions {
+    display: grid;
+    gap: 10px;
+    min-width: 210px;
+}
+
+.cookie-secondary-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.cookie-button,
+.cookie-preferences-link {
+    font: inherit;
+    cursor: pointer;
+}
+
+.cookie-button {
+    min-height: 44px;
+    padding: 10px 15px;
+    border-radius: 999px;
+    font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cookie-button:focus-visible,
+.cookie-preferences-link:focus-visible {
+    outline: 3px solid #A9633B;
+    outline-offset: 3px;
+}
+
+.cookie-button:hover { transform: translateY(-1px); }
+.cookie-button:active { transform: translateY(0); }
+
+.cookie-button-primary {
+    border: 1px solid #A9633B;
+    color: #E9E2D2;
+    background: #A9633B;
+    box-shadow: 0 7px 18px rgba(169, 99, 59, 0.3);
+}
+
+.cookie-button-primary:hover {
+    background: #8f4f2d;
+    box-shadow: 0 10px 22px rgba(169, 99, 59, 0.4);
+}
+
+.cookie-button-secondary,
+.cookie-button-text {
+    min-height: 34px;
+    padding: 7px 9px;
+    color: #656434;
+    background: transparent;
+    border: 1px solid rgba(101, 100, 52, 0.48);
+    font-size: 0.72rem;
+}
+
+.cookie-secondary-actions .cookie-button-secondary {
+    width: 100%;
+}
+
+.cookie-button-text { border-color: transparent; text-decoration: underline; }
+.cookie-button-secondary:hover,
+.cookie-button-text:hover { background: rgba(255, 255, 255, 0.45); }
+
+.cookie-preferences-link {
+    padding: 0;
+    color: #E9E2D2;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(233, 226, 210, 0.6);
+    font-size: 0.82rem;
+    line-height: 1.25;
+}
+
+.cookie-preferences-link:hover { color: #fff; border-bottom-color: #fff; }
+
+@keyframes cookieBannerIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 680px) {
+    .cookie-consent { right: 12px; bottom: 12px; left: 12px; }
+    .cookie-consent-card { grid-template-columns: 1fr; gap: 18px; padding: 20px 18px; border-radius: 21px; }
+    .cookie-consent h2 { font-size: 2.15rem; }
+    .cookie-consent-actions { min-width: 0; }
+    .cookie-button-primary { width: 100%; }
+    .cookie-secondary-actions { justify-content: stretch; }
+    .cookie-button-secondary,
+    .cookie-button-text { flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cookie-consent-card,
+    .cookie-button { animation: none; transition: none; }
+}
+
 /* Vakantiemelding op alle publieke pagina's */
 .notice-modal {
     position: fixed;

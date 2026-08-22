@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3WPQ6YD3MY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-3WPQ6YD3MY');
-    </script>
+    <script src="cookie-consent.js?v=2" defer></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contacteer Figlio in Genk - Landwaartslaan 11, 3600 Genk. Bel 089 24 38 24 of mail naar info@figlio.be. Reserveer online of kom langs voor authentieke pizza en pasta.">
     <link rel="canonical" href="https://www.figlio.be/contact.html">
     <title>Contacteer ons - Figlio</title>
-    <link rel="stylesheet" href="style.css?v=20260801">
+    <link rel="stylesheet" href="style.css?v=20260822-cookie-2">
     <link rel="icon" type="image/png" href="images/figlio_tabbar2.png?v=1">
     <script src="notice-popup.js?v=20260801-5" defer></script>
     
@@ -632,6 +624,24 @@
         </div>
     </footer>
     <script>
+        const websiteStatusEndpoint = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+            ? 'http://localhost:4199/api/website-status'
+            : 'https://bestellen.figlio.be/api/website-status';
+        let forcedClosure = false;
+
+        async function refreshManagedClosure() {
+            try {
+                const response = await fetch(websiteStatusEndpoint, { cache: 'no-store' });
+                if (!response.ok) throw new Error('Status niet beschikbaar');
+                const status = await response.json();
+                forcedClosure = status?.closed === true;
+            } catch {
+                // Preserve the normal opening-hours indicator if the service is unavailable.
+                forcedClosure = false;
+            }
+            checkOpeningStatus();
+        }
+
         // Openingstijden status berekenen
         function checkOpeningStatus() {
             const now = new Date();
@@ -643,8 +653,12 @@
             let isOpen = false;
             let statusText = '';
             
+            // A managed “Gesloten” website pop-up temporarily takes precedence.
+            if (forcedClosure) {
+                isOpen = false;
+                statusText = 'GESLOTEN';
             // Maandag (1) en Dinsdag (2) zijn gesloten
-            if (currentDay === 1 || currentDay === 2) {
+            } else if (currentDay === 1 || currentDay === 2) {
                 isOpen = false;
                 statusText = 'VANDAAG GESLOTEN';
             } else {
@@ -691,7 +705,8 @@
         
         // Voer uit bij laden
         window.addEventListener('load', function() {
-            checkOpeningStatus();
+            refreshManagedClosure();
+            window.setInterval(refreshManagedClosure, 60000);
         });
         
         // Hamburger menu functionaliteit

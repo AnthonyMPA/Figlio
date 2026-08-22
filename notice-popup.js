@@ -44,16 +44,22 @@
     const text = typeof value.text === "string" ? value.text.trim() : "";
     const startDate = typeof value.startDate === "string" ? value.startDate : "";
     const endDate = typeof value.endDate === "string" ? value.endDate : "";
+    const startTime = /^\d{2}:\d{2}$/.test(value.startTime || "") ? value.startTime : "00:00";
+    const endTime = /^\d{2}:\d{2}$/.test(value.endTime || "") ? value.endTime : "23:59";
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
 
     if (!title || !datePattern.test(startDate) || !datePattern.test(endDate)) return null;
-    return { title, text, startDate, endDate };
+    return { title, text, startDate, endDate, startTime, endTime };
   }
 
   function isCurrent(notice) {
     if (!notice) return false;
-    const today = brusselsToday();
-    return notice.startDate <= today && today <= notice.endDate;
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Brussels", year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+    }).formatToParts(new Date()).filter((part) => part.type !== "literal").map((part) => [part.type, part.value]));
+    const now = `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}`;
+    return `${notice.startDate}T${notice.startTime}` <= now && now <= `${notice.endDate}T${notice.endTime}`;
   }
 
   function readCachedNotice() {
