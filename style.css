@@ -86,6 +86,11 @@ body {
 
 .cookie-policy-link {
     display: inline-flex;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    min-height: 38px;
+    padding: 7px 2px;
     margin-top: 9px;
     color: #A9633B;
     font-family: 'Montserrat', Verdana, Geneva, sans-serif;
@@ -93,6 +98,8 @@ body {
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 3px;
+    touch-action: manipulation;
+    pointer-events: auto;
 }
 
 .cookie-policy-link:hover { color: #656434; }

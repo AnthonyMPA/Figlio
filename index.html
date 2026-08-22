@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <script src="cookie-consent.js?v=7" defer></script>
+  <script src="cookie-consent.js?v=8" defer></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,11 +68,15 @@
             background: transparent;
             border: none;
             box-shadow: none;
+            /* The collapsed container is still 500px+ high. Without this it
+               catches taps on footer links behind its transparent area. */
+            pointer-events: none;
         }
         
         .restomanager-container.collapsed .restomanager-toggle {
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(169, 99, 59, 0.3);
+            pointer-events: auto;
         }
         
         .restomanager-container.collapsed .restomanager-iframe {

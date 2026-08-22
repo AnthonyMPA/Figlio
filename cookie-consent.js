@@ -117,7 +117,7 @@
           <h2 id="cookieConsentTitle">Jouw privacy</h2>
           <p>We gebruiken noodzakelijke cookies om de website goed te laten functioneren. Met jouw toestemming gebruiken we Google Analytics om Figlio verder te verbeteren.</p>
           <p class="cookie-consent-details">Weigeren heeft geen invloed op je toegang en je kunt je keuze altijd wijzigen.</p>
-          <a class="cookie-policy-link" href="cookies.html#cookiebeleid">Lees ons cookiebeleid</a>
+          <a class="cookie-policy-link" data-cookie-policy-link href="./cookies.html#cookiebeleid">Lees ons cookiebeleid</a>
         </div>
         <div class="cookie-consent-actions">
           <button type="button" class="cookie-button cookie-button-primary" data-cookie-choice="accepted">Alles accepteren</button>
@@ -170,6 +170,15 @@
   // Use delegation instead of relying only on one button instance. This keeps
   // Cookievoorkeuren working on every public page and after dynamic DOM changes.
   document.addEventListener('click', (event) => {
+    // Keep the policy route reliable on mobile browsers as well. The explicit
+    // navigation avoids a tap being swallowed by the banner's fixed container.
+    const policyLink = event.target.closest('[data-cookie-policy-link]');
+    if (policyLink) {
+      event.preventDefault();
+      window.location.assign(policyLink.href);
+      return;
+    }
+
     const choiceButton = event.target.closest('[data-cookie-choice]');
     if (choiceButton) {
       event.preventDefault();
