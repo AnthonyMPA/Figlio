@@ -64,7 +64,12 @@
 
   function readCachedNotice() {
     try {
-      return normalizeNotice(JSON.parse(localStorage.getItem(cacheKey)));
+      const notice = normalizeNotice(JSON.parse(localStorage.getItem(cacheKey)));
+      if (notice && !isCurrent(notice)) {
+        cacheNotice(null);
+        return null;
+      }
+      return notice;
     } catch {
       return null;
     }
