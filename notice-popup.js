@@ -1,7 +1,7 @@
 (() => {
   const cacheKey = "figlio-website-popup";
   const websitePopupEndpoint = ["localhost", "127.0.0.1"].includes(window.location.hostname)
-    ? "http://localhost:4199/api/website-popup/active"
+    ? "http://localhost:4173/api/website-popup/active"
     : "https://bestellen.figlio.be/api/website-popup/active";
   let dismissed = false;
 

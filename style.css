@@ -258,6 +258,11 @@ body {
     margin-top: 10px;
 }
 
+.notice-primary {
+    font-size: 1.22em;
+    font-weight: 700;
+}
+
 .notice-flag {
     display: inline-block;
     margin-left: 6px;
