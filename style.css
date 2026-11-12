@@ -173,13 +173,13 @@ body {
 .cookie-button-text:hover { background: rgba(255, 255, 255, 0.45); }
 
 .cookie-preferences-link {
+    order: -1;
     padding: 0;
     color: #E9E2D2;
     background: transparent;
     border: 0;
     border-bottom: 1px solid rgba(233, 226, 210, 0.6);
     text-decoration: none;
-    font-size: 0.82rem;
     line-height: 1.25;
 }
 
@@ -2300,7 +2300,8 @@ nav ul li a:focus {
     gap: 1rem;
 }
 
-.footer-bottom-content p {
+.footer-bottom-content p,
+.footer-bottom-content .cookie-preferences-link {
     font-family: 'Poppins', Verdana, Geneva, sans-serif;
     font-size: 0.95rem;
     color: #E9E2D2;
@@ -2314,8 +2315,13 @@ nav ul li a:focus {
         text-align: center;
         gap: 0.5rem;
     }
+
+    .footer-bottom-content .cookie-preferences-link {
+        align-self: flex-start;
+    }
     
-    .footer-bottom-content p {
+    .footer-bottom-content p,
+    .footer-bottom-content .cookie-preferences-link {
         font-size: 0.9rem;
     }
 }
@@ -2330,7 +2336,8 @@ nav ul li a:focus {
         padding: 0 1rem;
     }
     
-    .footer-bottom-content p {
+    .footer-bottom-content p,
+    .footer-bottom-content .cookie-preferences-link {
         font-size: 0.85rem;
     }
 }
