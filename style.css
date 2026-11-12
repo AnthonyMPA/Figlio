@@ -2310,16 +2310,16 @@ nav ul li a:focus {
 }
 
 @media (max-width: 768px) {
+    .site-footer .footer-bottom {
+        padding-bottom: var(--footer-reservation-clearance, 5.5rem);
+    }
+
     .footer-bottom-content {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
     }
 
-    .footer-bottom-content .cookie-preferences-link {
-        align-self: flex-start;
-    }
-    
     .footer-bottom-content p,
     .footer-bottom-content .cookie-preferences-link {
         font-size: 0.9rem;
