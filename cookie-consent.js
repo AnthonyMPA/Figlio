@@ -43,7 +43,10 @@
 
   const activateAnalytics = () => {
     window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
-    if (document.querySelector('script[data-figlio-ga]')) return;
+    if (document.querySelector('script[data-figlio-ga]')) {
+      window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      return;
+    }
     window.dataLayer = window.dataLayer || [];
     window.gtag = function gtag() { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
@@ -166,6 +169,19 @@
     else openBanner();
     refreshPreferencePage();
   };
+
+  const recordMenuSocialClick = (event) => {
+    if (event.defaultPrevented || (event.type === 'auxclick' && event.button !== 1)) return;
+    const link = event.target.closest?.('a.menu-social-link[data-social-platform]');
+    if (!link || !['www.figlio.be', 'figlio.be'].includes(window.location.hostname)) return;
+    if (getChoice() !== 'accepted' || typeof window.gtag !== 'function') return;
+
+    const platform = link.dataset.socialPlatform;
+    if (platform !== 'instagram' && platform !== 'facebook') return;
+    window.gtag('event', `menu_${platform}_click`, { send_to: GA_MEASUREMENT_ID });
+  };
+  document.addEventListener('click', recordMenuSocialClick);
+  document.addEventListener('auxclick', recordMenuSocialClick);
 
   // Use delegation instead of relying only on one button instance. This keeps
   // Cookievoorkeuren working on every public page and after dynamic DOM changes.
