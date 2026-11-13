@@ -63,8 +63,7 @@
 @media (max-width: 768px) {
     .menu-social-section { width: min(590px, 100%); }
 }
-@media (max-width: 600px) {
-    .menu-social-section { width: min(585px, 100%); grid-template-columns: 1fr; gap: 14px; padding: 18px; text-align: center; }
+@media (max-width: 1180px), (max-width: 1376px) and (any-pointer: coarse) {
     .menu-social-section h2 {
         font-family: 'Poppins', Verdana, Geneva, sans-serif;
         font-size: clamp(18px, 4.6vw, 22px);
@@ -73,6 +72,9 @@
     }
     .menu-social-section h2 em { display: inline; }
     .menu-social-question { font: inherit; }
+}
+@media (max-width: 600px) {
+    .menu-social-section { width: min(585px, 100%); grid-template-columns: 1fr; gap: 14px; padding: 18px; text-align: center; }
     .menu-social-actions { grid-template-columns: 1fr 1fr; }
     .menu-social-link { gap: 8px; padding: 10px 8px; font-size: 12px; }
 }
