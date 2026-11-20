@@ -5125,7 +5125,10 @@ nav ul li a:focus {
         padding: 1px 7px;
         font-size: 8.5px;
     }
-    .ordering-soon .ordering-soon-label { font-size: 22px; }
+    .ordering-soon .ordering-soon-label {
+        font-size: 22px;
+        -webkit-text-stroke: 0.35px currentColor;
+    }
 }
 
 @media (max-width: 390px) {
