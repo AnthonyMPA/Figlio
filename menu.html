@@ -8,7 +8,7 @@
     <meta name="description" content="Ontdek het menu van Figlio - authentieke pizza en pasta in Genk. Bekijk ons restaurant menu en takeaway menu met dagverse ingrediënten en traditionele Italiaanse recepten.">
     <link rel="canonical" href="https://www.figlio.be/menu.html">
     <title>Menu - Figlio</title>
-  <link rel="stylesheet" href="style.css?v=20261112-mobile-footer">
+  <link rel="stylesheet" href="style.css?v=20261120-online-ordering">
     <link rel="icon" type="image/png" href="images/figlio_tabbar2.png?v=1">
     <script src="notice-popup.js?v=20260801-5" defer></script>
     <link rel="stylesheet" href="menu-suggestions.css?v=15-tablet-title">
@@ -337,12 +337,20 @@
         }
     </style>
     <script src="copyright-year.js" defer></script>
+    <script src="ordering-preview.js?v=20261120" defer></script>
 </head>
 <body>
     
     <!-- RestoManager Reservatie Widget -->
     <div class="restomanager-container collapsed">
-        <div class="restomanager-toggle" id="restomanager-toggle">
+        <button class="restomanager-toggle ordering-soon" type="button"
+                aria-label="Online bestellen — binnenkort beschikbaar" data-order-url="https://bestel.figlio.be/">
+                <span class="ordering-soon-shimmer" aria-hidden="true"></span>
+                <span class="ordering-online-tag" aria-hidden="true">Online</span>
+                <span class="ordering-soon-label">Bestellen</span>
+                <span class="ordering-soon-badge" aria-hidden="true">Binnenkort</span>
+            </button>
+            <div class="restomanager-toggle" id="restomanager-toggle">
             <span class="toggle-text">Reserveren</span>
         </div>
         <div class="close-button" id="close-button">✕</div>
